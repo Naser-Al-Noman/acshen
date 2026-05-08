@@ -611,11 +611,10 @@ h3 {
 }
 
 .chat-launcher-icon {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
+  display: inline-block;
   width: 1.05rem;
   height: 1.05rem;
+  object-fit: contain;
 }
 
 .chat-launcher:hover {

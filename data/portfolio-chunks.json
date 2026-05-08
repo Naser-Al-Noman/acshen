@@ -62,6 +62,13 @@
       "section": "projects",
       "content": "1. Portfolio QA Site: This very portfolio website built with Node.js and vanilla JS, featuring a RAG-powered chatbot using Gemini API and Supabase vector database. 2. E-commerce Test Suite: A Selenium + Python test automation suite for a sample e-commerce app covering login, cart, checkout, and payment flows with 80+ test cases. 3. API Test Framework: A Postman + Newman CI pipeline for REST API testing with HTML reports and Slack notifications. 4. BRACU Bus Tracker: Academic project — a transport tracking web app tested and delivered as part of the BRAC University capstone.",
       "metadata": { "keywords": ["projects", "portfolio", "e-commerce", "selenium", "API framework", "postman", "newman", "bus tracker"] }
+    },
+    {
+      "id": "portfolio-website-architecture",
+      "title": "Portfolio Website Architecture",
+      "section": "projects",
+      "content": "Naser's portfolio website is a custom-built web application showcasing his QA engineering experience and technical skills. The frontend features a modern, responsive UI built with HTML, CSS, and Vanilla JavaScript. The backend is powered by Node.js, running a custom HTTP server without heavy frameworks. A standout feature is the AI Chatbot integrated directly into the site, utilizing Retrieval-Augmented Generation (RAG). It uses the Google Gemini API (gemini-2.5-flash for chat and gemini-embedding-001 for embeddings) to answer questions based on Naser's resume and portfolio data. The knowledge base is stored in a Supabase PostgreSQL database using the pgvector extension for efficient similarity search.",
+      "metadata": { "keywords": ["portfolio", "website", "architecture", "Node.js", "Gemini API", "Supabase", "pgvector", "RAG", "chatbot", "vanilla JS", "backend"] }
     }
   ]
 }
