@@ -120,7 +120,11 @@ module.exports = async (req, res) => {
 
   let payload;
   try {
-    payload = await parseRequestBody(req);
+    if (req.body) {
+      payload = typeof req.body === 'string' ? JSON.parse(req.body) : req.body;
+    } else {
+      payload = await parseRequestBody(req);
+    }
   } catch {
     sendJson(res, 400, { error: 'Invalid JSON payload.' });
     return;
