@@ -614,7 +614,8 @@ h3 {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.05rem;
+  width: 1.05rem;
+  height: 1.05rem;
 }
 
 .chat-launcher:hover {

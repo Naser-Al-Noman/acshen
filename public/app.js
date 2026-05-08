@@ -82,6 +82,17 @@ function updateBotIcon(theme) {
   botIcon.src = theme === 'light' ? lightSrc : darkSrc;
 }
 
+function updateChatLauncherIcon(theme) {
+  const chatIcon = document.querySelector('.chat-launcher-icon');
+  if (!chatIcon) {
+    return;
+  }
+
+  const lightSrc = chatIcon.dataset.light || 'logos/chat-intelligence-svgrepo-com-white.svg';
+  const darkSrc = chatIcon.dataset.dark || 'logos/chat-intelligence-svgrepo-com-dark.svg';
+  chatIcon.src = theme === 'light' ? lightSrc : darkSrc;
+}
+
 function updateThemeToggle(theme) {
   if (!themeToggle) {
     return;
@@ -104,6 +115,7 @@ function applyTheme(theme) {
   localStorage.setItem("theme", theme);
   updateThemeToggle(theme);
   updateBotIcon(theme);
+  updateChatLauncherIcon(theme);
 }
 
 function initTheme() {
