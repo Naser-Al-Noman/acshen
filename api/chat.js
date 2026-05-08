@@ -4,8 +4,14 @@ const { GoogleGenAI } = require('@google/genai');
 const { createClient } = require('@supabase/supabase-js');
 
 const REQUIRED_ENV = ['GEMINI_API_KEY', 'SUPABASE_URL', 'SUPABASE_SERVICE_ROLE_KEY'];
+const envStatus = REQUIRED_ENV.reduce((status, name) => {
+  status[name] = Boolean(process.env[name]);
+  return status;
+}, {});
 const missingEnv = REQUIRED_ENV.filter((name) => !process.env[name]);
+console.log('[chat] Environment variable status:', envStatus);
 if (missingEnv.length) {
+  console.error('[chat] Missing required environment variables:', missingEnv.join(', '));
   throw new Error(`Missing required environment variables: ${missingEnv.join(', ')}`);
 }
 
