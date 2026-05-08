@@ -1,0 +1,67 @@
+{
+  "chunks": [
+    {
+      "id": "profile",
+      "title": "Profile & Summary",
+      "section": "about",
+      "content": "Naser Al Noman is a QA Engineer with 2+ years of hands-on experience in software quality assurance, test automation, and manual testing. He is skilled in building reliable test frameworks, identifying critical bugs, and ensuring software meets the highest quality standards. He has a solid background in both functional and non-functional testing across web, mobile, and API layers. He is passionate about continuous improvement and automation-first mindsets.",
+      "metadata": { "keywords": ["profile", "summary", "QA engineer", "experience", "about"] }
+    },
+    {
+      "id": "contact",
+      "title": "Contact Information",
+      "section": "contact",
+      "content": "Naser Al Noman can be contacted by email at naser.noman2023@gmail.com or by phone at +880 1521-502348. His LinkedIn profile is at https://www.linkedin.com/in/naser-al-noman/ and his GitHub is at https://github.com/naser-noman. He is based in Dhaka, Bangladesh.",
+      "metadata": { "keywords": ["email", "phone", "linkedin", "github", "contact", "reach"] }
+    },
+    {
+      "id": "experience-sj-innovation",
+      "title": "SJ Innovation LLC – QA Engineer",
+      "section": "experience",
+      "content": "Naser worked as a QA Engineer at SJ Innovation LLC from January 2024 to present (current role). Responsibilities included: designing and executing comprehensive test plans and test cases for web and mobile applications; performing functional, regression, integration, and exploratory testing; writing automated test scripts using Selenium WebDriver and Python; collaborating with cross-functional teams including developers, product managers, and designers to identify and resolve defects; reporting detailed bug reports in Jira with steps to reproduce, expected vs actual results; conducting API testing using Postman and validating REST endpoints; participating in Agile sprint ceremonies and contributing to QA process improvements.",
+      "metadata": { "keywords": ["SJ Innovation", "current job", "QA Engineer", "Selenium", "Python", "Jira", "Postman", "Agile"] }
+    },
+    {
+      "id": "experience-mongol-tori",
+      "title": "Mongol Tori – QA Tester (Part-time)",
+      "section": "experience",
+      "content": "Naser worked as a part-time QA Tester at Mongol Tori from June 2023 to December 2023. He performed manual testing of the travel booking platform, identified UI/UX inconsistencies, and raised detailed bug reports. He tested cross-browser compatibility and mobile responsiveness, and contributed to acceptance testing before major releases.",
+      "metadata": { "keywords": ["Mongol Tori", "part-time", "QA tester", "travel", "manual testing", "cross-browser"] }
+    },
+    {
+      "id": "experience-bracu-express",
+      "title": "BRACU Express – QA Volunteer",
+      "section": "experience",
+      "content": "Naser volunteered as a QA team member for BRACU Express, the BRAC University student transport management app, from January 2023 to May 2023. He helped test the Android application for bugs, usability issues, and performance problems. He contributed test case documentation and assisted the dev team with defect triaging.",
+      "metadata": { "keywords": ["BRACU Express", "volunteer", "BRAC University", "Android", "mobile testing"] }
+    },
+    {
+      "id": "skills",
+      "title": "Technical Skills",
+      "section": "skills",
+      "content": "Testing skills: Manual Testing, Functional Testing, Regression Testing, Smoke Testing, Integration Testing, Exploratory Testing, UAT, API Testing. Automation: Selenium WebDriver, Python (pytest), TestNG, basic Cypress. Tools: Postman, Jira, Trello, GitHub, VS Code, Android Studio. Methodologies: Agile/Scrum, BDD concepts, test-driven quality mindset. Databases: basic SQL for test data validation (MySQL, PostgreSQL). Other: Bug reporting, test plan writing, test case design techniques (BVA, EP, decision table).",
+      "metadata": { "keywords": ["skills", "selenium", "python", "pytest", "postman", "jira", "automation", "API testing", "SQL"] }
+    },
+    {
+      "id": "education",
+      "title": "Education",
+      "section": "education",
+      "content": "Naser Al Noman completed his Bachelor of Science in Computer Science and Engineering (CSE) from BRAC University, Dhaka, Bangladesh. He graduated in 2023. During his studies he focused on software engineering, databases, algorithms, and completed a final-year project related to software quality and testing.",
+      "metadata": { "keywords": ["education", "BRAC University", "CSE", "computer science", "bachelor", "degree"] }
+    },
+    {
+      "id": "achievements",
+      "title": "Achievements & Certifications",
+      "section": "achievements",
+      "content": "Naser's achievements include: ISTQB Foundation Level certification (in progress); completed Udemy course on Selenium WebDriver with Python; participated in BRAC University programming contest; dean's list recognition for academic performance in 2022; successfully led QA efforts for a product launch at SJ Innovation with zero critical post-release bugs.",
+      "metadata": { "keywords": ["achievements", "ISTQB", "certification", "selenium", "udemy", "award", "dean's list"] }
+    },
+    {
+      "id": "projects",
+      "title": "Personal & Academic Projects",
+      "section": "projects",
+      "content": "1. Portfolio QA Site: This very portfolio website built with Node.js and vanilla JS, featuring a RAG-powered chatbot using Gemini API and Supabase vector database. 2. E-commerce Test Suite: A Selenium + Python test automation suite for a sample e-commerce app covering login, cart, checkout, and payment flows with 80+ test cases. 3. API Test Framework: A Postman + Newman CI pipeline for REST API testing with HTML reports and Slack notifications. 4. BRACU Bus Tracker: Academic project — a transport tracking web app tested and delivered as part of the BRAC University capstone.",
+      "metadata": { "keywords": ["projects", "portfolio", "e-commerce", "selenium", "API framework", "postman", "newman", "bus tracker"] }
+    }
+  ]
+}

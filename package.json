@@ -1,0 +1,25 @@
+{
+  "name": "naser-portfolio",
+  "version": "1.0.0",
+  "description": "Minimal portfolio site for Naser Al Noman",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js",
+    "ingest": "node scripts/ingest.js",
+    "ingest:verify": "node scripts/verify-ingestion.js",
+    "sync": "npm run ingest && npm run ingest:verify"
+  },
+  "keywords": [
+    "portfolio",
+    "qa",
+    "nodejs"
+  ],
+  "author": "Naser Al Noman",
+  "license": "MIT",
+  "dependencies": {
+    "@google/genai": "^1.52.0",
+    "@supabase/supabase-js": "^2.105.3",
+    "dotenv": "^17.4.2"
+  }
+}

@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Naser Al Noman | QA Engineer</title>
+    <meta
+      name="description"
+      content="Portfolio of Naser Al Noman, Software Quality Assurance Engineer and Computer Science graduate passionate about software quality and intelligent automation."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <div class="ambient ambient-one" aria-hidden="true"></div>
+    <div class="ambient ambient-two" aria-hidden="true"></div>
+
+    <main class="layout">
+      <!-- Hero Section -->
+      <header class="hero card">
+        <div class="hero-top">
+          <div>
+            <p class="tag">Software Quality Assurance Engineer</p>
+            <h1>Naser Al Noman</h1>
+          </div>
+          <div class="hero-controls">
+              <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Toggle theme" aria-pressed="false">
+              <span class="theme-toggle-track" aria-hidden="true">
+                <span class="theme-toggle-thumb"></span>
+              </span>
+              <span class="theme-label">Theme</span>
+            </button>
+            <button id="chat-toggle" class="theme-toggle chat-toggle" type="button" aria-label="Toggle chatbot visibility" aria-pressed="false">
+              <img src="logos/bot.svg" data-light="logos/bot.svg" data-dark="logos/bot-dark.svg" alt="Chatbot icon" class="bot-icon" />
+            </button>
+          </div>
+        </div>
+        <p class="lead">
+          <span id="typing-text"></span><span class="cursor">|</span>
+        </p>
+        <div class="contact-info">
+          <span><strong>Location</strong>: Mirpur-2, Dhaka-1216</span>
+          <span><strong>Email</strong>: <a href="mailto:nasernoman277@gmail.com">nasernoman277@gmail.com</a></span>
+          <span><strong>Phone</strong>: <a href="tel:+8801940957688">+880 1940957688</a></span>
+        </div>
+        <div class="social-links">
+          <a href="https://github.com/Naser-Al-Noman" target="_blank">GitHub</a>
+          <a href="https://www.linkedin.com/in/naser-al-noman" target="_blank">LinkedIn</a>
+        </div>
+        <div class="hero-actions">
+          <a class="button button-primary" href="/resume/resume.pdf" download>Download Resume</a>
+        </div>
+      </header>
+
+      <!-- Experience Section -->
+      <section class="card">
+        <h2>Experience</h2>
+        <div class="timeline">
+          <article class="timeline-item">
+            <div class="timeline-marker">Nov '25 – Present</div>
+            <div class="company-header">
+              <img src="logos/sj-innovation-logo.png" alt="SJ Innovation LLC logo" class="company-logo" />
+              <div>
+                <h3>Software Quality Assurance Engineer (Trainee)</h3>
+                <p class="company">SJ Innovation LLC • Dhaka, Bangladesh</p>
+              </div>
+            </div>
+            <ul>
+              <li>Develop and execute manual and automated test cases for web and API-based applications</li>
+              <li>Collaborate with developers to identify, document, and resolve software defects</li>
+              <li>Contribute to test documentation, reporting, and continuous improvement of QA workflows</li>
+            </ul>
+          </article>
+          <article class="timeline-item">
+            <div class="timeline-marker">Oct '22 – Dec '24</div>
+            <div class="company-header">
+              <img src="logos/mongol-tori-logo.png" alt="Mongol Tori logo" class="company-logo" />
+              <div>
+                <h3>Research & Documentation, AI & Autonomous Subteam</h3>
+                <p class="company">Mongol Tori • Dhaka, Bangladesh</p>
+              </div>
+            </div>
+            <ul>
+              <li>Contributed to test planning and validation of AI models and autonomous navigation logic</li>
+              <li>Collected and analyzed performance data from rover sensors</li>
+              <li>Implemented data-driven decision logic using Python and ROS for object detection</li>
+              <li>Maintained versioned datasets and documented insights for the research team</li>
+            </ul>
+          </article>
+          <article class="timeline-item">
+            <div class="timeline-marker">Jun '21 – Nov '23</div>
+            <div class="company-header">
+              <img src="logos/bracu-express-logo.jfif" alt="BRACU Express logo" class="company-logo" />
+              <div>
+                <h3>Sports Journalist & Editor</h3>
+                <p class="company">BRACU Express • Dhaka, Bangladesh</p>
+              </div>
+            </div>
+            <ul>
+              <li>Conducted interviews and gathered qualitative data for publication</li>
+              <li>Analyzed readership trends using Excel to track article engagement metrics</li>
+              <li>Collaborated with diverse editorial team on communication and presentation skills</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <!-- Skills Section -->
+      <section class="card">
+        <h2>Technical Skills</h2>
+        <div class="skills-grid">
+          <div class="skill-category">
+            <h3>QA & Testing</h3>
+            <ul class="chips">
+              <li>Playwright</li>
+              <li>Selenium</li>
+              <li>Cypress</li>
+              <li>JMeter</li>
+              <li>Postman</li>
+              <li>Test Case Design</li>
+              <li>Regression Testing</li>
+              <li>Bug Tracking</li>
+            </ul>
+          </div>
+          <div class="skill-category">
+            <h3>Programming</h3>
+            <ul class="chips">
+              <li>Python</li>
+              <li>JavaScript</li>
+              <li>Flask</li>
+              <li>Django</li>
+              <li>Node.js</li>
+              <li>React</li>
+            </ul>
+          </div>
+          <div class="skill-category">
+            <h3>Data & Analysis</h3>
+            <ul class="chips">
+              <li>SQL</li>
+              <li>MongoDB</li>
+              <li>Excel</li>
+              <li>Power BI</li>
+              <li>Matplotlib</li>
+              <li>Scikit-learn</li>
+            </ul>
+          </div>
+          <div class="skill-category">
+            <h3>Other</h3>
+            <ul class="chips">
+              <li>Git & GitHub</li>
+              <li>HTML & CSS</li>
+              <li>LaTeX</li>
+              <li>Arduino</li>
+              <li>ROS</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Education Section -->
+      <section class="card">
+        <h2>Education</h2>
+        <div class="education-grid">
+          <article class="edu-item">
+            <h3>Bachelor of Science in Computer Science</h3>
+            <p class="company">BRAC University</p>
+            <p class="period">Jun '21 – Oct '25</p>
+            <p class="detail">CGPA: 3.51</p>
+          </article>
+          <article class="edu-item">
+            <h3>Higher Secondary Certificate</h3>
+            <p class="company">Mirpur Cantonment Public School & College</p>
+            <p class="period">Jul '18 – Dec '20</p>
+            <p class="detail">GPA: 5.00</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- Projects Section -->
+      <section class="card">
+        <h2>Projects</h2>
+        <div class="projects">
+          <article class="project-card">
+            <h3>Shopping Ecommerce Site</h3>
+            <p class="tech-stack">React • TypeScript • Vite • Tailwind CSS</p>
+            <p>
+              Developed a modern, full-featured ecommerce web application showcasing best practices 
+              in frontend development. Implemented product listing, cart, checkout, and wishlist 
+              functionalities with responsive, modular components. Created administrative dashboards 
+              to visualize system performance.
+            </p>
+          </article>
+          <article class="project-card">
+            <h3>Recipe Blog Site</h3>
+            <p class="tech-stack">Node.js • Express • EJS • MongoDB • JavaScript</p>
+            <p>
+              Implemented RESTful APIs for recipe CRUD operations and category-based filtering. 
+              Integrated MongoDB for storing recipes, ingredients, instructions, and user ratings.
+            </p>
+          </article>
+          <article class="project-card">
+            <h3>Blood Services Platform</h3>
+            <p class="tech-stack">Python • Flask • SQLite • HTML • CSS</p>
+            <p>
+              Rebuilt database system for performance optimization and secure data handling. 
+              Applied SQL queries for tracking donor activity and generating reports. 
+              Integrated encryption (bcrypt) to maintain data privacy and integrity.
+            </p>
+          </article>
+          <article class="project-card">
+            <h3>Stock Prediction using Machine Learning</h3>
+            <p class="tech-stack">Python • Scikit-learn • Flask</p>
+            <p>
+              Integrated Flask to deploy an interactive web interface for real-time stock prediction visualization. 
+              Implemented data preprocessing, feature extraction, and model training pipelines with Scikit-learn.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <!-- Achievements Section -->
+      <section class="card">
+        <h2>Achievements & Awards</h2>
+        <ul class="achievements">
+          <li>
+            <strong>1st Runner Up – NASA Space Apps Challenge 2022</strong> (Dhaka Region)
+            <br/>Built a web-based space data visualization platform to display stellar variability 
+            and 3D planetary models using real scientific datasets.
+          </li>
+          <li>
+            <strong>Math Olympiad</strong> – 3rd place in BAGHC, 2017
+          </li>
+          <li>
+            <strong>Science Project</strong> – 3rd place in BAGHC, 2017
+          </li>
+        </ul>
+      </section>
+
+      <!-- Contact Section -->
+      <section class="card contact-card">
+        <div class="contact-heading">
+          <div>
+            <h2>Let’s connect</h2>
+          </div>
+          <p class="contact-intro">
+            Let's connect! Whether it's collaboration, feedback, or just a friendly hello, I'm all ears. Send me a message below.
+          </p>
+        </div>
+
+        <div id="contact-success" style="display: none; padding: 12px; border-radius: 8px; background: rgba(76, 175, 80, 0.1); border: 1px solid rgba(76, 175, 80, 0.3); color: #4caf50; margin-bottom: 16px;">
+          ✓ Thanks for reaching out! Your message has been sent.
+        </div>
+        <div id="contact-error" style="display: none; padding: 12px; border-radius: 8px; background: rgba(244, 67, 54, 0.1); border: 1px solid rgba(244, 67, 54, 0.3); color: var(--accent); margin-bottom: 16px;"></div>
+
+        <form id="contact-form-element" class="contact-form" action="https://formspree.io/f/mlgzpjev" method="POST">
+          <div class="form-row">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="Your name" />
+          </div>
+          <div class="form-row">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="Your email" />
+          </div>
+          <div class="form-row form-message">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="6" placeholder="Drop a note with any website feedback or career opportunities, or just say hi. Where are you from?" required></textarea>
+          </div>
+          <button type="submit" class="button button-primary send-button">Send Message</button>
+        </form>
+      </section>
+
+      <!-- Footer -->
+      <footer class="footer card">
+        <p>&copy; 2026 Naser Al Noman. Built with Node.js, Gemini AI, and Supabase. All rights reserved.</p>
+        <div class="footer-links">
+          <a href="https://github.com/Naser-Al-Noman" target="_blank">GitHub</a>
+          <a href="https://www.linkedin.com/in/naser-al-noman" target="_blank">LinkedIn</a>
+          <a href="mailto:nasernoman277@gmail.com">Email</a>
+        </div>
+      </footer>
+    </main>
+
+    <div class="chat-widget closed" id="chat-widget" data-chat-state="closed">
+      <button
+        type="button"
+        id="chat-launcher"
+        class="chat-launcher"
+        aria-controls="chat-panel"
+        aria-expanded="false"
+        aria-label="Ask about Naser"
+      >
+        <span class="chat-launcher-icon" aria-hidden="true">💬</span>
+        <span class="chat-launcher-text">Ask About Naser</span>
+      </button>
+
+      <section id="chat-panel" class="card chatbot-panel" aria-labelledby="chatbot-title">
+        <div class="chatbot-header">
+          <div>
+            <p class="tag">RAG Assistant</p>
+            <h2 id="chatbot-title">Ask About Naser</h2>
+          </div>
+          <button type="button" id="chat-close" class="chat-close" aria-label="Close chatbot">&times;</button>
+        </div>
+        <p class="chatbot-note">
+          This chatbot answers only from portfolio data such as experience, skills, projects, education, and contact details.
+        </p>
+        <div class="chat-suggestions" aria-label="Suggested questions">
+          <button type="button" class="suggestion-chip" data-question="What QA tools does Naser use?">QA tools</button>
+          <button type="button" class="suggestion-chip" data-question="Tell me about Naser's experience at SJ Innovation LLC.">SJ Innovation</button>
+          <button type="button" class="suggestion-chip" data-question="What projects has Naser built with Node.js?">Node.js projects</button>
+          <button type="button" class="suggestion-chip" data-question="How can I contact Naser?">Contact</button>
+        </div>
+        <div id="chat-messages" class="chat-messages" aria-live="polite">
+          <article class="message message-bot">
+            <p>
+              Ask me about Naser's QA background, Playwright and JMeter skills, projects, education, or achievements.
+            </p>
+          </article>
+        </div>
+        <div id="loading-indicator" class="loading-indicator" style="display: none;">Processing<span class="spinner"></span></div>
+        <form id="chat-form" class="chat-form">
+          <label class="sr-only" for="chat-input">Ask a question about Naser Al Noman</label>
+          <input
+            id="chat-input"
+            name="message"
+            type="text"
+            maxlength="280"
+            placeholder="Ask about experience, skills, projects, education..."
+            autocomplete="off"
+            required
+          />
+          <button type="submit">Send</button>
+        </form>
+      </section>
+    </div>
+  </body>
+</html>
