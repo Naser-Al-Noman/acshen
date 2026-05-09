@@ -626,11 +626,9 @@ h3 {
 }
 
 :root[data-theme="light"] .chat-launcher {
-  background: #ffffff;
-  color: #0f172a;
-  border: 1px solid var(--line);
-  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.08);
+  color: #000000;
 }
+
 
 .chat-launcher:hover {
   transform: translateY(-1px);
