@@ -262,6 +262,12 @@ body[data-theme="light"] {
   font-family: "JetBrains Mono", monospace;
 }
 
+.contact-info span {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
 .contact-info a {
   color: var(--accent);
   text-decoration: none;
@@ -285,7 +291,9 @@ body[data-theme="light"] {
 }
 
 .social-links a {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
   padding: 8px 14px;
   border-radius: 999px;
   border: 1px solid var(--accent);
@@ -1190,6 +1198,9 @@ a:hover {
 }
 
 .footer-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
   color: var(--accent);
   text-decoration: none;
   transition: color 0.2s ease;
