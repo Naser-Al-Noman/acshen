@@ -18,7 +18,7 @@
   --accent: #c72929;
   --accent-soft: #fde8e8;
   --line: rgba(31, 41, 55, 0.1);
-  --button-text: #111;
+  --button-text: #ffffff;
 }
 
 * {
@@ -774,6 +774,19 @@ h3 {
 
 :root[data-theme="dark"] .message-bot {
   background: rgba(0, 0, 0, 0.3);
+}
+
+:root[data-theme="light"] .chatbot-panel {
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.8);
+}
+
+:root[data-theme="light"] .chat-messages {
+  background: rgba(0, 0, 0, 0.04);
+}
+
+:root[data-theme="light"] .message-bot {
+  background: #ffffff;
+  border-color: rgba(31, 41, 55, 0.1);
 }
 
 .chat-form {
