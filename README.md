@@ -1,4 +1,4 @@
-# Naser Al Noman – QA Engineer Portfolio
+# Naser Al Noman 
 
 A modern, responsive portfolio website featuring a custom-built AI Assistant. The chatbot is powered by Retrieval-Augmented Generation (RAG) using Google Gemini and Supabase to answer questions directly based on my resume, experience, and skills.
 
