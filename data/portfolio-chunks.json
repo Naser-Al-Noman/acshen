@@ -4,71 +4,64 @@
       "id": "profile",
       "title": "Profile & Summary",
       "section": "about",
-      "content": "Naser Al Noman is a QA Engineer with 2+ years of hands-on experience in software quality assurance, test automation, and manual testing. He is skilled in building reliable test frameworks, identifying critical bugs, and ensuring software meets the highest quality standards. He has a solid background in both functional and non-functional testing across web, mobile, and API layers. He is passionate about continuous improvement and automation-first mindsets.",
-      "metadata": { "keywords": ["profile", "summary", "QA engineer", "experience", "about"] }
+      "content": "Naser Al Noman is a Computer Science graduate with a strong sense of ownership and a proven ability to learn and adapt quickly. He is skilled in deriving optimal solutions through research, experimentation, and analytical thinking. Known for professionalism, clear communication, and independent project execution. He is passionate about advancing software quality through rigorous testing and intelligent automation, applying AI-assisted methods to enhance accuracy, coverage, and overall development efficiency.",
+      "metadata": { "keywords": ["profile", "summary", "QA engineer", "experience", "about", "computer science"] }
     },
     {
       "id": "contact",
       "title": "Contact Information",
       "section": "contact",
-      "content": "Naser Al Noman can be contacted by email at naser.noman2023@gmail.com or by phone at +880 1521-502348. His LinkedIn profile is at https://www.linkedin.com/in/naser-al-noman/ and his GitHub is at https://github.com/naser-noman. He is based in Dhaka, Bangladesh.",
-      "metadata": { "keywords": ["email", "phone", "linkedin", "github", "contact", "reach"] }
+      "content": "Naser Al Noman can be contacted by email at nasernoman277@gmail.com or by phone at +880 1940957688. His LinkedIn profile is at https://www.linkedin.com/in/naser-al-noman/ and his GitHub is at https://github.com/Naser-Al-Noman. His portfolio website is at https://naser-al-noman.github.io/. He is based in Mirpur-2, Dhaka-1216, Bangladesh.",
+      "metadata": { "keywords": ["email", "phone", "linkedin", "github", "portfolio", "contact", "reach"] }
     },
     {
       "id": "experience-sj-innovation",
-      "title": "SJ Innovation LLC – QA Engineer",
+      "title": "SJ Innovation LLC – Software Quality Assurance Engineer (Trainee)",
       "section": "experience",
-      "content": "Naser worked as a QA Engineer at SJ Innovation LLC from January 2024 to present (current role). Responsibilities included: designing and executing comprehensive test plans and test cases for web and mobile applications; performing functional, regression, integration, and exploratory testing; writing automated test scripts using Selenium WebDriver and Python; collaborating with cross-functional teams including developers, product managers, and designers to identify and resolve defects; reporting detailed bug reports in Jira with steps to reproduce, expected vs actual results; conducting API testing using Postman and validating REST endpoints; participating in Agile sprint ceremonies and contributing to QA process improvements.",
-      "metadata": { "keywords": ["SJ Innovation", "current job", "QA Engineer", "Selenium", "Python", "Jira", "Postman", "Agile"] }
+      "content": "Naser worked as a Software Quality Assurance Engineer (Trainee) at SJ Innovation LLC from November 2025 to present (current role), based in Dhaka, Bangladesh. Responsibilities included: developing and executing manual and automated test cases for web and API-based applications; collaborating with developers to identify, document, and resolve software defects; automating tests using Playwright; contributing to test documentation, reporting, and continuous improvement of QA workflows.",
+      "metadata": { "keywords": ["SJ Innovation", "current job", "QA Engineer", "trainee", "Playwright", "automation", "manual testing", "API testing"] }
     },
     {
       "id": "experience-mongol-tori",
-      "title": "Mongol Tori – QA Tester (Part-time)",
+      "title": "Mongol Tori – Research & Documentation, AI & Autonomous Subteam",
       "section": "experience",
-      "content": "Naser worked as a part-time QA Tester at Mongol Tori from June 2023 to December 2023. He performed manual testing of the travel booking platform, identified UI/UX inconsistencies, and raised detailed bug reports. He tested cross-browser compatibility and mobile responsiveness, and contributed to acceptance testing before major releases.",
-      "metadata": { "keywords": ["Mongol Tori", "part-time", "QA tester", "travel", "manual testing", "cross-browser"] }
+      "content": "Naser worked in the Research & Documentation role on the AI & Autonomous Subteam at Mongol Tori from October 2022 to December 2024, based in Dhaka, Bangladesh. He contributed to test planning and validation of AI models and autonomous navigation logic, identifying performance issues and documenting test outcomes. He collected and analyzed performance data from rover sensors to improve autonomous navigation. He implemented data-driven decision logic using Python and ROS for object detection, and maintained versioned datasets and documented insights for the research team.",
+      "metadata": { "keywords": ["Mongol Tori", "AI", "autonomous", "research", "documentation", "Python", "ROS", "object detection", "rover"] }
     },
     {
       "id": "experience-bracu-express",
-      "title": "BRACU Express – QA Volunteer",
+      "title": "BRACU Express – Sports Journalist & Editor",
       "section": "experience",
-      "content": "Naser volunteered as a QA team member for BRACU Express, the BRAC University student transport management app, from January 2023 to May 2023. He helped test the Android application for bugs, usability issues, and performance problems. He contributed test case documentation and assisted the dev team with defect triaging.",
-      "metadata": { "keywords": ["BRACU Express", "volunteer", "BRAC University", "Android", "mobile testing"] }
+      "content": "Naser worked as a Sports Journalist & Editor at BRACU Express from June 2021 to November 2023, based in Dhaka, Bangladesh. He conducted interviews and gathered qualitative data for publication, enhancing reporting accuracy. He analyzed readership trends using Excel to track article engagement metrics, and collaborated with a diverse editorial team, developing strong communication and presentation skills for client-facing tasks.",
+      "metadata": { "keywords": ["BRACU Express", "sports journalist", "editor", "writing", "Excel", "communication", "editorial"] }
     },
     {
       "id": "skills",
       "title": "Technical Skills",
       "section": "skills",
-      "content": "Testing skills: Manual Testing, Functional Testing, Regression Testing, Smoke Testing, Integration Testing, Exploratory Testing, UAT, API Testing. Automation: Selenium WebDriver, Python (pytest), TestNG, basic Cypress. Tools: Postman, Jira, Trello, GitHub, VS Code, Android Studio. Methodologies: Agile/Scrum, BDD concepts, test-driven quality mindset. Databases: basic SQL for test data validation (MySQL, PostgreSQL). Other: Bug reporting, test plan writing, test case design techniques (BVA, EP, decision table).",
-      "metadata": { "keywords": ["skills", "selenium", "python", "pytest", "postman", "jira", "automation", "API testing", "SQL"] }
+      "content": "Programming: Python (Flask, Django), JavaScript. QA Practices: Test Case Design, Regression Testing, Bug Tracking. Testing Tools: Selenium, Postman, Cypress, Playwright, JMeter. Data Analysis & Visualization: Power BI, Excel (Pivot Tables, Macros), Google Sheets, Matplotlib. Web Development: HTML, CSS, Node.js, Django, Flask. Database Management: SQL (MySQL, SQLite, MongoDB), Query Optimization, Data Cleaning. Version Control: Git, GitHub. Other: LaTeX, Arduino.",
+      "metadata": { "keywords": ["skills", "python", "javascript", "selenium", "postman", "cypress", "playwright", "jmeter", "power bi", "excel", "node.js", "django", "flask", "sql", "mysql", "mongodb", "git", "arduino", "latex"] }
     },
     {
       "id": "education",
       "title": "Education",
       "section": "education",
-      "content": "Naser Al Noman completed his Bachelor of Science in Computer Science and Engineering (CSE) from BRAC University, Dhaka, Bangladesh. He graduated in 2023. During his studies he focused on software engineering, databases, algorithms, and completed a final-year project related to software quality and testing.",
-      "metadata": { "keywords": ["education", "BRAC University", "CSE", "computer science", "bachelor", "degree"] }
+      "content": "Naser Al Noman completed his Bachelor of Science in Computer Science (CSE) from BRAC University, Dhaka, Bangladesh, from June 2021 to October 2025, graduating with a CGPA of 3.51. Prior to that, he completed his Higher Secondary Certificate (HSC) at Mirpur Cantonment Public School & College from July 2018 to December 2020, achieving a GPA of 5.00.",
+      "metadata": { "keywords": ["education", "BRAC University", "CSE", "computer science", "bachelor", "degree", "CGPA", "HSC", "Mirpur Cantonment"] }
     },
     {
       "id": "achievements",
-      "title": "Achievements & Certifications",
+      "title": "Achievements",
       "section": "achievements",
-      "content": "Naser's achievements include: ISTQB Foundation Level certification (in progress); completed Udemy course on Selenium WebDriver with Python; participated in BRAC University programming contest; dean's list recognition for academic performance in 2022; successfully led QA efforts for a product launch at SJ Innovation with zero critical post-release bugs.",
-      "metadata": { "keywords": ["achievements", "ISTQB", "certification", "selenium", "udemy", "award", "dean's list"] }
+      "content": "Naser's achievements include: 1st Runner Up at the NASA Space Apps Challenge 2022 (Dhaka Region), where he built a web-based space data visualization platform displaying stellar variability and 3D planetary models using real scientific datasets; 3rd place in the Math Olympiad at BAGHC in 2017; 3rd place in the Science Project competition at BAGHC in 2017.",
+      "metadata": { "keywords": ["achievements", "NASA Space Apps", "math olympiad", "science project", "BAGHC", "award", "competition"] }
     },
     {
       "id": "projects",
       "title": "Personal & Academic Projects",
       "section": "projects",
-      "content": "1. Portfolio QA Site: This very portfolio website built with Node.js and vanilla JS, featuring a RAG-powered chatbot using Gemini API and Supabase vector database. 2. E-commerce Test Suite: A Selenium + Python test automation suite for a sample e-commerce app covering login, cart, checkout, and payment flows with 80+ test cases. 3. API Test Framework: A Postman + Newman CI pipeline for REST API testing with HTML reports and Slack notifications. 4. BRACU Bus Tracker: Academic project — a transport tracking web app tested and delivered as part of the BRAC University capstone.",
-      "metadata": { "keywords": ["projects", "portfolio", "e-commerce", "selenium", "API framework", "postman", "newman", "bus tracker"] }
-    },
-    {
-      "id": "portfolio-website-architecture",
-      "title": "Portfolio Website Architecture",
-      "section": "projects",
-      "content": "Naser's portfolio website is a custom-built web application showcasing his QA engineering experience and technical skills. The frontend features a modern, responsive UI built with HTML, CSS, and Vanilla JavaScript. The backend is powered by Node.js, running a custom HTTP server without heavy frameworks. A standout feature is the AI Chatbot integrated directly into the site, utilizing Retrieval-Augmented Generation (RAG). It uses the Google Gemini API (gemini-2.5-flash for chat and gemini-embedding-001 for embeddings) to answer questions based on Naser's resume and portfolio data. The knowledge base is stored in a Supabase PostgreSQL database using the pgvector extension for efficient similarity search.",
-      "metadata": { "keywords": ["portfolio", "website", "architecture", "Node.js", "Gemini API", "Supabase", "pgvector", "RAG", "chatbot", "vanilla JS", "backend"] }
+      "content": "1. Shopping Ecommerce Site (React, TypeScript, Vite, Tailwind CSS): A modern, full-featured ecommerce web application showcasing best practices in frontend development and UI design. Implemented product listing, cart, checkout, and wishlist functionalities with responsive, modular components. Created administrative dashboards to visualize donor availability and system performance. 2. Blood Services (HTML, CSS, Python, Flask, SQLite): Rebuilt an existing database system for performance optimization and secure data handling. Applied SQL queries for tracking donor activity and generating summary reports. Integrated encryption (bcrypt) to maintain data privacy and integrity. 3. Stock Prediction using Machine Learning (Python, Scikit-learn): Integrated Flask to deploy an interactive web interface for real-time stock prediction visualization. Implemented data preprocessing, feature extraction, and model training pipelines with Scikit-learn. 4. Recipe Blog Site (Node.js, Express, EJS, MongoDB, JavaScript, CSS): Implemented RESTful APIs for recipe CRUD operations and category-based filtering. Integrated MongoDB for storing recipes, ingredients, instructions, and user ratings.",
+      "metadata": { "keywords": ["projects", "ecommerce", "react", "typescript", "tailwind", "blood services", "flask", "sqlite", "stock prediction", "machine learning", "scikit-learn", "recipe blog", "node.js", "mongodb"] }
     }
   ]
 }
