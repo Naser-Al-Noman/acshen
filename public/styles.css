@@ -13,11 +13,11 @@
 :root[data-theme="light"] {
   --bg: #f5f7fb;
   --surface: rgba(255, 255, 255, 0.88);
-  --text: #1f2937;
-  --muted: #5b6776;
+  --text: #0f172a;
+  --muted: #475569;
   --accent: #c72929;
   --accent-soft: #fde8e8;
-  --line: rgba(31, 41, 55, 0.1);
+  --line: rgba(15, 23, 42, 0.15);
   --button-text: #ffffff;
 }
 
@@ -750,6 +750,7 @@ h3 {
 
 .message p {
   margin: 0;
+  color: inherit;
 }
 
 .message-user {
@@ -787,6 +788,12 @@ h3 {
 :root[data-theme="light"] .message-bot {
   background: #ffffff;
   border-color: rgba(31, 41, 55, 0.1);
+}
+
+:root[data-theme="light"] .chat-form input {
+  background: #ffffff;
+  color: #0f172a;
+  border-color: rgba(15, 23, 42, 0.2);
 }
 
 .chat-form {
