@@ -865,6 +865,13 @@ h3 {
   border-radius: var(--radius);
   border: 1px solid var(--line);
   background: rgba(255, 255, 255, 0.05);
+  transition: all 0.3s ease;
+}
+
+.skill-category:hover {
+  border-color: var(--accent);
+  box-shadow: 0 4px 16px rgba(255, 68, 68, 0.2);
+  transform: translateY(-2px);
 }
 
 .skill-category h3 {
