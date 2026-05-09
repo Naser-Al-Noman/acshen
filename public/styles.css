@@ -383,6 +383,13 @@ h3 {
 .contact-card {
   display: grid;
   gap: 20px;
+  transition: all 0.3s ease;
+}
+
+.contact-card:hover {
+  border-color: var(--accent);
+  box-shadow: 0 4px 16px rgba(255, 68, 68, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  transform: translateY(-2px);
 }
 
 .contact-heading {
