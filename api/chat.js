@@ -133,7 +133,7 @@ module.exports = async (req, res) => {
   const message = (payload.message || '').trim();
   if (!message) {
     sendJson(res, 200, {
-      answer: "Ask me anything about Naser's experience, skills, projects, education, or contact details.",
+      answer: "Ask me anything about Noman's experience, skills, projects, education, or contact details.",
       sources: [],
       retrieved: [],
     });
