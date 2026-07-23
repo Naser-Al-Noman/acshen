@@ -17,9 +17,9 @@
   --surface: #ffffff;
   --text: #171717;
   --muted: #5c5c5c;
-  --accent: #0f766e;
-  --accent-soft: #ecfdf8;
-  --accent-rgb: 15, 118, 110;
+  --accent: #14b8a6;
+  --accent-soft: #ccfbf1;
+  --accent-rgb: 20, 184, 166;
   --line: rgba(23, 23, 23, 0.12);
   --button-text: #ffffff;
   --shadow: 0 1px 2px rgba(0, 0, 0, 0.06);
@@ -69,11 +69,11 @@ body[data-theme="light"] {
 }
 
 :root[data-theme="light"] .ambient-one {
-  opacity: 0.14;
+  opacity: 0.2;
 }
 
 :root[data-theme="light"] .ambient-two {
-  opacity: 0.1;
+  opacity: 0.14;
 }
 
 .hero-top {
@@ -297,6 +297,12 @@ body[data-theme="light"] {
   border-bottom: none;
 }
 
+:root[data-theme="light"] .contact-info a:hover {
+  color: #04110e;
+  background: var(--accent);
+  box-shadow: 0 2px 8px rgba(var(--accent-rgb), 0.35);
+}
+
 .social-links {
   display: flex;
   gap: 12px;
@@ -323,8 +329,22 @@ body[data-theme="light"] {
   border-color: var(--accent);
 }
 
+:root[data-theme="light"] .social-links a:hover {
+  color: #04110e;
+  box-shadow: 0 4px 12px rgba(var(--accent-rgb), 0.3);
+  transform: translateY(-1px);
+}
+
 .hero-actions {
   margin-top: 18px;
+}
+
+.download-button {
+  gap: 8px;
+}
+
+.download-button svg {
+  flex-shrink: 0;
 }
 
 .button {
@@ -544,6 +564,20 @@ h3 {
   color: var(--accent);
 }
 
+.timeline-item:hover .company-header h3 {
+  color: var(--accent);
+}
+
+:root[data-theme="light"] .timeline-item:hover .company,
+:root[data-theme="light"] .timeline-item:hover .company-header h3 {
+  color: #0f766e;
+}
+
+:root[data-theme="light"] .timeline-item:hover {
+  background: rgba(var(--accent-rgb), 0.06);
+  border-radius: 0 var(--radius) var(--radius) 0;
+}
+
 .timeline-item ul {
   margin: 8px 0;
   padding-left: 20px;
@@ -567,10 +601,6 @@ h3 {
   margin: 0 0 4px;
   font-weight: 700;
   transition: color 0.2s ease;
-}
-
-.timeline-item:hover .company-header h3 {
-  color: var(--accent);
 }
 
 .company-logo {
@@ -932,6 +962,12 @@ h3 {
   opacity: 1;
 }
 
+:root[data-theme="light"] .skill-chip:hover {
+  background: rgba(var(--accent-rgb), 0.22);
+  box-shadow: 0 6px 16px rgba(var(--accent-rgb), 0.28);
+  border-color: var(--accent);
+}
+
 .skill-chip img {
   width: 18px;
   height: 18px;
@@ -970,6 +1006,11 @@ h3 {
   border-color: var(--accent);
 }
 
+:root[data-theme="light"] .edu-item:hover {
+  background: rgba(var(--accent-rgb), 0.08);
+  box-shadow: 0 4px 14px rgba(var(--accent-rgb), 0.16);
+}
+
 .edu-item h3 {
   margin-bottom: 4px;
 }
@@ -1004,6 +1045,11 @@ h3 {
 
 .project-card:hover {
   border-color: var(--accent);
+}
+
+:root[data-theme="light"] .project-card:hover {
+  background: rgba(var(--accent-rgb), 0.06);
+  box-shadow: 0 4px 14px rgba(var(--accent-rgb), 0.16);
 }
 
 .project-card h3 {
@@ -1051,6 +1097,11 @@ h3 {
 
 .achievements li:hover {
   background: rgba(var(--accent-rgb), 0.1);
+}
+
+:root[data-theme="light"] .achievements li:hover {
+  background: rgba(var(--accent-rgb), 0.16);
+  box-shadow: 0 2px 10px rgba(var(--accent-rgb), 0.18);
 }
 
 .achievements strong {
@@ -1227,5 +1278,10 @@ a:hover {
 
 .footer-links a:hover {
   color: var(--text);
+}
+
+:root[data-theme="light"] .footer-links a:hover,
+:root[data-theme="light"] a:hover {
+  color: #0f766e;
 }
 
