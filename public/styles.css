@@ -3,23 +3,23 @@
   --surface: #141414;
   --text: #f2f2f2;
   --muted: #9a9a9a;
-  --accent: #7d9f88;
-  --accent-soft: #243028;
-  --accent-rgb: 125, 159, 136;
+  --accent: #2dd4bf;
+  --accent-soft: #14352f;
+  --accent-rgb: 45, 212, 191;
   --line: rgba(255, 255, 255, 0.1);
   --radius: 8px;
-  --button-text: #ffffff;
+  --button-text: #04110e;
   --shadow: 0 1px 2px rgba(0, 0, 0, 0.24);
 }
 
 :root[data-theme="light"] {
-  --bg: #f7f7f5;
+  --bg: #f7f8f8;
   --surface: #ffffff;
   --text: #171717;
   --muted: #5c5c5c;
-  --accent: #4f735c;
-  --accent-soft: #eef4f0;
-  --accent-rgb: 79, 115, 92;
+  --accent: #0f766e;
+  --accent-soft: #ecfdf8;
+  --accent-rgb: 15, 118, 110;
   --line: rgba(23, 23, 23, 0.12);
   --button-text: #ffffff;
   --shadow: 0 1px 2px rgba(0, 0, 0, 0.06);
@@ -340,7 +340,7 @@ body[data-theme="light"] {
 
 .button-primary {
   background: var(--accent);
-  color: var(--button-text);
+  color: #ffffff;
   border: 1px solid transparent;
 }
 
@@ -603,7 +603,7 @@ h3 {
   border-radius: 999px;
   padding: 12px 18px;
   background: var(--accent);
-  color: var(--button-text);
+  color: #ffffff;
   font: inherit;
   font-weight: 700;
   letter-spacing: 0.01em;
@@ -622,14 +622,15 @@ h3 {
   object-fit: contain;
 }
 
-:root[data-theme="light"] .chat-launcher {
-  color: #000000;
+.hero-actions .button-primary,
+.chat-launcher,
+.send-button,
+.chat-form button {
+  color: #ffffff;
 }
 
-:root[data-theme="light"] .hero-actions .button-primary {
-  color: #000000;
-}
-
+:root[data-theme="light"] .hero-actions .button-primary,
+:root[data-theme="light"] .chat-launcher,
 :root[data-theme="light"] .send-button,
 :root[data-theme="light"] .chat-form button {
   color: #000000;
@@ -841,7 +842,7 @@ h3 {
   border-radius: 12px;
   padding: 0 16px;
   background: var(--accent);
-  color: var(--button-text);
+  color: #ffffff;
   font: inherit;
   font-weight: 600;
   cursor: pointer;
