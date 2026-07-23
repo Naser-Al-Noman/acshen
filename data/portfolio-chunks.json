@@ -4,57 +4,64 @@
       "id": "profile",
       "title": "Profile & Summary",
       "section": "about",
-      "content": "Naser Al Noman is a Computer Science graduate with a strong sense of ownership and a proven ability to learn and adapt quickly. He is skilled in deriving optimal solutions through research, experimentation, and analytical thinking. Known for professionalism, clear communication, and independent project execution. He is passionate about advancing software quality through rigorous testing and intelligent automation, applying AI-assisted methods to enhance accuracy, coverage, and overall development efficiency.",
-      "metadata": { "keywords": ["profile", "summary", "QA engineer", "experience", "about", "computer science"] }
+      "content": "Naser Al Noman is a Computer Science graduate with hands-on experience in Software Quality Assurance across CRM and EMR web applications. He is proficient in manual testing, API testing, SQL-based data validation, regression testing, and Playwright automation. He is adept at collaborating with cross-functional teams in Agile environments to deliver reliable software while continuously improving testing processes through automation and AI-assisted workflows.",
+      "metadata": { "keywords": ["profile", "summary", "QA engineer", "CRM", "EMR", "Playwright", "API testing", "Agile", "about", "computer science"] }
     },
     {
       "id": "contact",
       "title": "Contact Information",
       "section": "contact",
-      "content": "Naser Al Noman can be contacted by email at nasernoman277@gmail.com or by phone at +880 1940957688. His LinkedIn profile is at https://www.linkedin.com/in/naser-al-noman/ and his GitHub is at https://github.com/Naser-Al-Noman. His portfolio website is at https://naser-al-noman.github.io/. He is based in Mirpur-2, Dhaka-1216, Bangladesh.",
-      "metadata": { "keywords": ["email", "phone", "linkedin", "github", "portfolio", "contact", "reach"] }
+      "content": "Naser Al Noman can be contacted by email at nasernoman277@gmail.com or by phone at +880 1940957688. His LinkedIn profile is at https://www.linkedin.com/in/naser-al-noman and his GitHub is at https://github.com/Naser-Al-Noman. His portfolio website is at https://naseralnoman.vercel.app/. He is based in Mirpur-2, Dhaka-1216, Bangladesh.",
+      "metadata": { "keywords": ["email", "phone", "linkedin", "github", "portfolio", "contact", "reach", "vercel"] }
     },
     {
-      "id": "experience-sj-innovation",
+      "id": "experience-sj-innovation-trainee",
       "title": "SJ Innovation LLC – Software Quality Assurance Engineer (Trainee)",
       "section": "experience",
-      "content": "Naser worked as a Software Quality Assurance Engineer (Trainee) at SJ Innovation LLC from November 2025 to present (current role), based in Dhaka, Bangladesh. Responsibilities included: developing and executing manual and automated test cases for web and API-based applications; collaborating with developers to identify, document, and resolve software defects; automating tests using Playwright; contributing to test documentation, reporting, and continuous improvement of QA workflows.",
-      "metadata": { "keywords": ["SJ Innovation", "current job", "QA Engineer", "trainee", "Playwright", "automation", "manual testing", "API testing"] }
+      "content": "Naser worked as a Software Quality Assurance Engineer (Trainee) at SJ Innovation LLC from March 2026 to July 2026, based in Dhaka, Bangladesh. He designed, executed, and maintained manual test cases for CRM and EMR web applications, ensuring comprehensive functional and regression coverage. He performed API testing using Postman and validated backend data through SQL queries and database verification. He identified, documented, and tracked defects in collaboration with developers, ensuring timely resolution and high software quality. He automated end-to-end test scenarios using Playwright to reduce repetitive manual testing efforts. He was nominated as Performer of the Month for contributions in the CRM project.",
+      "metadata": { "keywords": ["SJ Innovation", "trainee", "QA Engineer", "CRM", "EMR", "Playwright", "Postman", "SQL", "API testing", "regression", "performer of the month"] }
+    },
+    {
+      "id": "experience-sj-innovation-internship",
+      "title": "SJ Innovation LLC – Software Quality Assurance Engineer (Internship)",
+      "section": "experience",
+      "content": "Naser worked as a Software Quality Assurance Engineer (Internship) at SJ Innovation LLC from November 2025 to March 2026, based in Dhaka, Bangladesh. He assisted in executing manual test cases for web-based applications. He supported the identification, documentation, and reporting of software defects. He collaborated with QA engineers and developers throughout the software testing lifecycle. He was nominated as Performer of the Month for contributions in the EMR project.",
+      "metadata": { "keywords": ["SJ Innovation", "internship", "QA Engineer", "EMR", "manual testing", "defects", "performer of the month"] }
     },
     {
       "id": "experience-mongol-tori",
       "title": "Mongol Tori – Research & Documentation, AI & Autonomous Subteam",
-      "section": "experience",
+      "section": "extracurricular",
       "content": "Naser worked in the Research & Documentation role on the AI & Autonomous Subteam at Mongol Tori from October 2022 to December 2024, based in Dhaka, Bangladesh. He contributed to test planning and validation of AI models and autonomous navigation logic, identifying performance issues and documenting test outcomes. He collected and analyzed performance data from rover sensors to improve autonomous navigation. He implemented data-driven decision logic using Python and ROS for object detection, and maintained versioned datasets and documented insights for the research team.",
-      "metadata": { "keywords": ["Mongol Tori", "AI", "autonomous", "research", "documentation", "Python", "ROS", "object detection", "rover"] }
+      "metadata": { "keywords": ["Mongol Tori", "AI", "autonomous", "research", "documentation", "Python", "ROS", "object detection", "rover", "extracurricular"] }
     },
     {
       "id": "experience-bracu-express",
       "title": "BRACU Express – Sports Journalist & Editor",
-      "section": "experience",
+      "section": "extracurricular",
       "content": "Naser worked as a Sports Journalist & Editor at BRACU Express from June 2021 to November 2023, based in Dhaka, Bangladesh. He conducted interviews and gathered qualitative data for publication, enhancing reporting accuracy. He analyzed readership trends using Excel to track article engagement metrics, and collaborated with a diverse editorial team, developing strong communication and presentation skills for client-facing tasks.",
-      "metadata": { "keywords": ["BRACU Express", "sports journalist", "editor", "writing", "Excel", "communication", "editorial"] }
+      "metadata": { "keywords": ["BRACU Express", "sports journalist", "editor", "writing", "Excel", "communication", "editorial", "extracurricular"] }
     },
     {
       "id": "skills",
       "title": "Technical Skills",
       "section": "skills",
-      "content": "Programming: Python (Flask, Django), JavaScript. QA Practices: Test Case Design, Regression Testing, Bug Tracking. Testing Tools: Selenium, Postman, Cypress, Playwright, JMeter. Data Analysis & Visualization: Power BI, Excel (Pivot Tables, Macros), Google Sheets, Matplotlib. Web Development: HTML, CSS, Node.js, Django, Flask. Database Management: SQL (MySQL, SQLite, MongoDB), Query Optimization, Data Cleaning. Version Control: Git, GitHub. Other: LaTeX, Arduino.",
-      "metadata": { "keywords": ["skills", "python", "javascript", "selenium", "postman", "cypress", "playwright", "jmeter", "power bi", "excel", "node.js", "django", "flask", "sql", "mysql", "mongodb", "git", "arduino", "latex"] }
+      "content": "Programming: Python (Flask, Django), JavaScript, HTML, CSS. Software Testing: Manual Testing, Functional Testing, Regression Testing, Smoke Testing, Integration Testing, API Testing, End-to-End Testing, Test Case Design. Testing Tools: Playwright, Selenium, Cypress, Postman, JMeter. Database: MySQL, MongoDB, SQLite, SQL Querying, Data Validation. Development Tools: Git, GitHub, Cursor AI, VS Code. Methodologies: Agile (Scrum), Bug Tracking, Test Documentation. Other: LaTeX, Arduino.",
+      "metadata": { "keywords": ["skills", "python", "javascript", "playwright", "selenium", "cypress", "postman", "jmeter", "mysql", "mongodb", "sqlite", "git", "cursor ai", "agile", "scrum", "manual testing", "api testing"] }
     },
     {
       "id": "education",
       "title": "Education",
       "section": "education",
-      "content": "Naser Al Noman completed his Bachelor of Science in Computer Science (CSE) from BRAC University, Dhaka, Bangladesh, from June 2021 to October 2025, graduating with a CGPA of 3.51. Prior to that, he completed his Higher Secondary Certificate (HSC) at Mirpur Cantonment Public School & College from July 2018 to December 2020, achieving a GPA of 5.00.",
-      "metadata": { "keywords": ["education", "BRAC University", "CSE", "computer science", "bachelor", "degree", "CGPA", "HSC", "Mirpur Cantonment"] }
+      "content": "Naser Al Noman completed his Bachelor of Science in Computer Science & Engineering (CSE) from BRAC University, Dhaka, Bangladesh, from June 2021 to October 2025, graduating with a CGPA of 3.51. Prior to that, he completed his Higher Secondary Certificate (HSC) at Mirpur Cantonment Public School & College from July 2018 to December 2020, achieving a GPA of 5.00.",
+      "metadata": { "keywords": ["education", "BRAC University", "CSE", "computer science", "engineering", "bachelor", "degree", "CGPA", "HSC", "Mirpur Cantonment"] }
     },
     {
       "id": "achievements",
       "title": "Achievements",
       "section": "achievements",
-      "content": "Naser's achievements include: 1st Runner Up at the NASA Space Apps Challenge 2022 (Dhaka Region), where he built a web-based space data visualization platform displaying stellar variability and 3D planetary models using real scientific datasets; 3rd place in the Math Olympiad at BAGHC in 2017; 3rd place in the Science Project competition at BAGHC in 2017.",
-      "metadata": { "keywords": ["achievements", "NASA Space Apps", "math olympiad", "science project", "BAGHC", "award", "competition"] }
+      "content": "Naser's achievements include: 1st Runner Up at the NASA Space Apps Challenge 2022 (Dhaka Region), where he built a web-based space data visualization platform displaying stellar variability and 3D planetary models using real scientific datasets; 3rd place in the Math Olympiad at BAGHC in 2017; 3rd place in the Science Project competition at BAGHC in 2017; nominated as Performer of the Month at SJ Innovation LLC during both his internship (EMR project) and trainee period (CRM project).",
+      "metadata": { "keywords": ["achievements", "NASA Space Apps", "math olympiad", "science project", "BAGHC", "award", "competition", "performer of the month", "SJI"] }
     },
     {
       "id": "projects",
@@ -62,6 +69,13 @@
       "section": "projects",
       "content": "1. Shopping Ecommerce Site (React, TypeScript, Vite, Tailwind CSS): A modern, full-featured ecommerce web application showcasing best practices in frontend development and UI design. Implemented product listing, cart, checkout, and wishlist functionalities with responsive, modular components. Created administrative dashboards to visualize donor availability and system performance. 2. Blood Services (HTML, CSS, Python, Flask, SQLite): Rebuilt an existing database system for performance optimization and secure data handling. Applied SQL queries for tracking donor activity and generating summary reports. Integrated encryption (bcrypt) to maintain data privacy and integrity. 3. Stock Prediction using Machine Learning (Python, Scikit-learn): Integrated Flask to deploy an interactive web interface for real-time stock prediction visualization. Implemented data preprocessing, feature extraction, and model training pipelines with Scikit-learn. 4. Recipe Blog Site (Node.js, Express, EJS, MongoDB, JavaScript, CSS): Implemented RESTful APIs for recipe CRUD operations and category-based filtering. Integrated MongoDB for storing recipes, ingredients, instructions, and user ratings.",
       "metadata": { "keywords": ["projects", "ecommerce", "react", "typescript", "tailwind", "blood services", "flask", "sqlite", "stock prediction", "machine learning", "scikit-learn", "recipe blog", "node.js", "mongodb"] }
+    },
+    {
+      "id": "references",
+      "title": "Professional References",
+      "section": "references",
+      "content": "Naser's professional reference is Rajib Chowdhury, Module Lead at SJ Innovation LLC. Contact: rajib.brunel@yahoo.co.uk. Phone: +8801776220433. LinkedIn: https://www.linkedin.com/in/rajib-chowdhury-brunel/. Rajib Chowdhury has 20+ years of experience in the software industry.",
+      "metadata": { "keywords": ["references", "Rajib Chowdhury", "Module Lead", "SJ Innovation", "recommendation"] }
     }
   ]
 }
