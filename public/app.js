@@ -282,7 +282,7 @@ suggestionButtons.forEach((button) => {
   });
 });
 
-const text = "Computer Science graduate passionate about advancing software quality through rigorous testing and intelligent automation. Proven ability to learn, adapt, and deliver optimal solutions through research and analytical thinking.";
+const text = "Computer Science graduate with hands-on QA experience across CRM and EMR applications. Skilled in manual testing, API testing, SQL validation, and Playwright automation in Agile teams.";
 const typingText = document.getElementById("typing-text");
 let typingIndex = 0;
 
