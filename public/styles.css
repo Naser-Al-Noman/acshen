@@ -1002,6 +1002,28 @@ h3 {
   transition: border-color 0.2s ease;
 }
 
+.edu-header {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  margin-bottom: 4px;
+}
+
+.edu-logo {
+  width: 48px;
+  height: 48px;
+  border-radius: 8px;
+  object-fit: contain;
+  flex-shrink: 0;
+  border: 1px solid var(--line);
+  background: #ffffff;
+  padding: 4px;
+}
+
+.edu-header .company {
+  margin: 4px 0 0;
+}
+
 .edu-item:hover {
   border-color: var(--accent);
 }
