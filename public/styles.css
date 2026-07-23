@@ -896,6 +896,47 @@ h3 {
   font-size: 0.95rem;
 }
 
+.skill-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.skill-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: rgba(var(--accent-rgb), 0.06);
+  color: var(--text);
+  font-size: 0.88rem;
+  line-height: 1.2;
+}
+
+.skill-chip img {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  opacity: 0.92;
+}
+
+:root:not([data-theme="light"]) .skill-chip img {
+  filter: invert(1) brightness(1.15);
+}
+
+:root[data-theme="light"] .skill-chip img {
+  opacity: 0.88;
+}
+
+.skills-row-chips dd {
+  color: var(--text);
+}
+
 /* Education Grid */
 .education-grid {
   display: grid;
