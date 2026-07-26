@@ -10,9 +10,10 @@ const { createClient } = require('@supabase/supabase-js');
 
 // ── Config ────────────────────────────────────────────────────────────────────
 const PORT         = process.env.PORT || 3000;
-const PUBLIC_DIR    = path.join(__dirname, 'public');
-const RESUME_DIR    = path.join(__dirname, 'resume');
-const MAX_BODY_SIZE = 1024 * 32; // 32 KB
+const PUBLIC_DIR         = path.join(__dirname, 'public');
+const RESUME_DIR         = path.join(__dirname, 'resume');
+const ACHIEVEMENTS_DIR   = path.join(__dirname, 'achievements');
+const MAX_BODY_SIZE      = 1024 * 32; // 32 KB
 
 // ── Env validation ────────────────────────────────────────────────────────────
 const REQUIRED_ENV = ['GEMINI_API_KEY', 'SUPABASE_URL', 'SUPABASE_SERVICE_ROLE_KEY'];
@@ -219,6 +220,29 @@ const server = http.createServer((req, res) => {
     const filePath = path.join(RESUME_DIR, safePath);
 
     if (!filePath.startsWith(RESUME_DIR)) {
+      res.writeHead(403, { 'Content-Type': 'text/plain; charset=UTF-8' });
+      res.end('403 Forbidden');
+      return;
+    }
+
+    fs.stat(filePath, (err, stats) => {
+      if (!err && stats.isFile()) {
+        sendFile(res, filePath);
+        return;
+      }
+
+      res.writeHead(404, { 'Content-Type': 'text/plain; charset=UTF-8' });
+      res.end('404 Not Found');
+    });
+    return;
+  }
+
+  if (req.url?.startsWith('/achievements/')) {
+    const achievementPath = req.url.slice('/achievements/'.length);
+    const safePath = path.normalize(achievementPath).replace(/^([.][.][/\\])+/, '');
+    const filePath = path.join(ACHIEVEMENTS_DIR, safePath);
+
+    if (!filePath.startsWith(ACHIEVEMENTS_DIR)) {
       res.writeHead(403, { 'Content-Type': 'text/plain; charset=UTF-8' });
       res.end('403 Forbidden');
       return;

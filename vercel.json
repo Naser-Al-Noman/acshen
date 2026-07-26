@@ -1,7 +1,8 @@
 {
   "rewrites": [
     { "source": "/resume/(.*)", "destination": "/resume/$1" },
-    { "source": "/((?!api/|resume/).*)", "destination": "/public/$1" },
+    { "source": "/achievements/(.*)", "destination": "/achievements/$1" },
+    { "source": "/((?!api/|resume/|achievements/).*)", "destination": "/public/$1" },
     { "source": "/", "destination": "/public/index.html" }
   ]
 }
