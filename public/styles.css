@@ -1099,6 +1099,39 @@ h3 {
   font-size: 0.9rem;
 }
 
+.project-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.project-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  text-decoration: none;
+  font-size: 0.8rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.project-links a:hover {
+  background: var(--accent);
+  color: var(--button-text);
+  border-color: var(--accent);
+}
+
+:root[data-theme="light"] .project-links a:hover {
+  color: #04110e;
+  box-shadow: 0 4px 12px rgba(var(--accent-rgb), 0.3);
+  transform: translateY(-1px);
+}
+
 /* Achievements */
 .achievements {
   list-style: none;
