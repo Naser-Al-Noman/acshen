@@ -400,36 +400,26 @@
       <section id="chat-panel" class="card chatbot-panel" aria-labelledby="chatbot-title">
         <div class="chatbot-header">
           <div>
-            <p class="tag">RAG Assistant</p>
+            <p class="tag">AI Assistant</p>
             <h2 id="chatbot-title">Ask About Noman</h2>
           </div>
           <button type="button" id="chat-close" class="chat-close" aria-label="Close chatbot">&times;</button>
         </div>
-        <p class="chatbot-note">
-          This chatbot answers only from portfolio data such as experience, skills, projects, education, and contact details.
-        </p>
-        <div class="chat-suggestions" aria-label="Suggested questions">
-          <button type="button" class="suggestion-chip" data-question="What QA tools does Naser use?">QA tools</button>
-          <button type="button" class="suggestion-chip" data-question="Tell me about Noman's experience at SJ Innovation LLC.">SJ Innovation</button>
-          <button type="button" class="suggestion-chip" data-question="What awards has Naser received?">Awards</button>
-          <button type="button" class="suggestion-chip" data-question="How can I contact Naser?">Contact</button>
-        </div>
         <div id="chat-messages" class="chat-messages" aria-live="polite">
           <article class="message message-bot">
             <p>
-              Ask me about Noman's QA background, Playwright skills, CRM/EMR experience, projects, or awards.
+              Hi! Ask me about Noman's QA background, projects, and awards — or anything else you're curious about.
             </p>
           </article>
         </div>
-        <div id="loading-indicator" class="loading-indicator" style="display: none;">Processing<span class="spinner"></span></div>
         <form id="chat-form" class="chat-form">
-          <label class="sr-only" for="chat-input">Ask a question about Naser Al Noman</label>
+          <label class="sr-only" for="chat-input">Ask a question</label>
           <input
             id="chat-input"
             name="message"
             type="text"
-            maxlength="280"
-            placeholder="Ask about experience, skills, projects, education..."
+            maxlength="500"
+            placeholder="Ask about Noman, tech, careers, or anything..."
             autocomplete="off"
             required
           />

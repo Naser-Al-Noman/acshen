@@ -98,20 +98,51 @@ async function retrieveChunks(queryEmbedding, matchCount, threshold) {
   return data || [];
 }
 
-async function generateAnswer(userMessage, chunks) {
-  const context = chunks
-    .map((c, i) => '[' + (i + 1) + '] ' + c.title + '\n' + c.content)
-    .join('\n\n');
+function buildSystemInstruction(chunks) {
+  const context = chunks.length
+    ? chunks.map((c, i) => '[' + (i + 1) + '] ' + c.title + '\n' + c.content).join('\n\n')
+    : '(No portfolio sections matched this question.)';
 
-  const systemInstruction =
-    "You are a helpful assistant for Naser Al Noman's portfolio website. " +
-    "Answer questions ONLY using the provided context sections below. " +
-    "Be concise and conversational. " +
-    "If the answer is not present in the context, say: " +
-    "'I don't have that information in the portfolio data — please reach out to Naser directly.' " +
-    "Do NOT make up information.\n\nCONTEXT:\n" + context;
+  return (
+    "You are a smart, friendly assistant on Naser Al Noman's portfolio website. " +
+    "You can answer both portfolio questions and general knowledge questions. " +
+    "When the user asks about Naser (experience, skills, projects, education, contact, awards), " +
+    "prefer the portfolio CONTEXT below and do not invent personal facts about him. " +
+    "If a personal detail about Naser is missing from CONTEXT, say you do not have that detail and suggest contacting him. " +
+    "For general, technical, career, or random questions unrelated to Naser's bio, answer helpfully using your knowledge. " +
+    "Be clear, accurate, and conversational. Use short paragraphs or markdown bullets when useful. " +
+    "Do not list sources, citations, or document titles in your reply. " +
+    "Stay professional and avoid fabricating citations.\n\n" +
+    "PORTFOLIO CONTEXT:\n" +
+    context
+  );
+}
 
-  const chat     = ai.chats.create({ model: CHAT_MODEL, config: { systemInstruction } });
+function normalizeHistory(rawHistory) {
+  if (!Array.isArray(rawHistory)) return [];
+
+  return rawHistory
+    .slice(-8)
+    .map((entry) => {
+      const role = entry && entry.role === 'model' ? 'model' : 'user';
+      const text = String((entry && entry.text) || '').trim();
+      if (!text) return null;
+      return { role, parts: [{ text: text.slice(0, 2000) }] };
+    })
+    .filter(Boolean);
+}
+
+async function generateAnswer(userMessage, chunks, history) {
+  const systemInstruction = buildSystemInstruction(chunks);
+  const chat = ai.chats.create({
+    model: CHAT_MODEL,
+    config: {
+      systemInstruction,
+      temperature: 0.7,
+      maxOutputTokens: 1024,
+    },
+    history: normalizeHistory(history),
+  });
   const response = await chat.sendMessage({ message: userMessage });
   return response.text;
 }
@@ -137,7 +168,7 @@ function handleChatRequest(req, res) {
     const message = (payload.message || '').trim();
     if (!message) {
       sendJson(res, 200, {
-        answer   : "Ask me anything about Noman's experience, skills, projects, education, or contact details.",
+        answer   : "Ask me about Noman's experience, skills, and projects — or any other question you'd like help with.",
         sources  : [],
         retrieved: [],
       });
@@ -147,25 +178,17 @@ function handleChatRequest(req, res) {
     try {
       const queryEmbedding = await embedQuery(message);
       const chunks         = await retrieveChunks(queryEmbedding);
-
-      if (!chunks.length) {
-        sendJson(res, 200, {
-          answer   : "I don't have that information in the portfolio data — please reach out to Naser directly.",
-          sources  : [],
-          retrieved: [],
-        });
-        return;
-      }
-
-      const sources = chunks.map((c) => c.title);
+      const sources        = chunks.map((c) => c.title);
       let answer;
 
       try {
-        answer = await generateAnswer(message, chunks);
+        answer = await generateAnswer(message, chunks, payload.history);
       } catch (generationErr) {
         if (isQuotaError(generationErr)) {
           console.warn('[chat] Gemini generation quota exceeded; using direct-context fallback.');
-          answer = buildDirectContextAnswer(chunks);
+          answer = chunks.length
+            ? buildDirectContextAnswer(chunks)
+            : 'Gemini quota is currently exhausted, so the assistant cannot generate a response right now. Please retry in about a minute.';
         } else {
           throw generationErr;
         }

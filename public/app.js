@@ -1,11 +1,9 @@
 const chatForm = document.querySelector("#chat-form");
 const chatInput = document.querySelector("#chat-input");
 const chatMessages = document.querySelector("#chat-messages");
-const suggestionButtons = document.querySelectorAll(".suggestion-chip");
 const chatWidget = document.querySelector("#chat-widget");
 const chatLauncher = document.querySelector("#chat-launcher");
 const chatCloseButton = document.querySelector("#chat-close");
-const loadingIndicator = document.getElementById("loading-indicator");
 const themeToggle = document.querySelector("#theme-toggle");
 const chatToggle = document.querySelector("#chat-toggle");
 const contactFormElement = document.getElementById("contact-form-element");
@@ -193,47 +191,99 @@ document.addEventListener("keydown", (event) => {
   }
 });
 
-function appendMessage(role, text, sources = []) {
+function escapeHtml(text) {
+  return String(text)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;");
+}
+
+function formatInlineMarkdown(text) {
+  return text
+    .replace(/`([^`]+)`/g, "<code>$1</code>")
+    .replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>")
+    .replace(/(^|[^*])\*([^*\n]+)\*(?!\*)/g, "$1<em>$2</em>");
+}
+
+function renderMarkdown(text) {
+  const lines = escapeHtml(String(text || "").trim()).split("\n");
+  const blocks = [];
+  let listItems = [];
+
+  function flushList() {
+    if (!listItems.length) {
+      return;
+    }
+    blocks.push(`<ul>${listItems.map((item) => `<li>${item}</li>`).join("")}</ul>`);
+    listItems = [];
+  }
+
+  for (const line of lines) {
+    const listMatch = line.match(/^[\*\-]\s+(.+)$/);
+    if (listMatch) {
+      listItems.push(formatInlineMarkdown(listMatch[1]));
+      continue;
+    }
+
+    flushList();
+
+    if (!line.trim()) {
+      continue;
+    }
+
+    blocks.push(`<p>${formatInlineMarkdown(line)}</p>`);
+  }
+
+  flushList();
+  return blocks.join("") || "<p></p>";
+}
+
+function appendMessage(role, text) {
   const article = document.createElement("article");
   article.className = `message message-${role}`;
 
-  const paragraph = document.createElement("p");
-  paragraph.textContent = text;
-  article.appendChild(paragraph);
-
-  if (sources.length && role === "bot") {
-    const sourceLabel = document.createElement("small");
-    sourceLabel.className = "message-sources";
-    sourceLabel.textContent = `Sources: ${sources.join(", ")}`;
-    article.appendChild(sourceLabel);
+  if (role === "bot") {
+    article.innerHTML = renderMarkdown(text);
+  } else {
+    const paragraph = document.createElement("p");
+    paragraph.textContent = text;
+    article.appendChild(paragraph);
   }
 
   chatMessages.appendChild(article);
   chatMessages.scrollTop = chatMessages.scrollHeight;
+  return article;
 }
 
-function setLoading(show) {
-  if (!loadingIndicator) {
-    return;
-  }
-  loadingIndicator.style.display = show ? "block" : "none";
+function showTypingIndicator() {
+  const article = document.createElement("article");
+  article.className = "message message-bot message-typing";
+  article.setAttribute("aria-label", "Assistant is typing");
+  article.innerHTML =
+    '<span class="typing-dots" aria-hidden="true"><span></span><span></span><span></span></span>';
+  chatMessages.appendChild(article);
+  chatMessages.scrollTop = chatMessages.scrollHeight;
+  return article;
 }
+
+const chatHistory = [];
 
 async function askChatbot(message) {
   if (chatWidget?.dataset.chatState !== "open") {
     setChatState(true);
   }
 
+  const historyForRequest = chatHistory.slice(-8);
   appendMessage("user", message);
   chatInput.value = "";
 
   const submitButton = chatForm?.querySelector("button");
   if (submitButton) {
     submitButton.disabled = true;
-    submitButton.textContent = "Thinking...";
   }
 
-  setLoading(true);
+  const typingMessage = showTypingIndicator();
 
   try {
     const response = await fetch("/api/chat", {
@@ -241,7 +291,7 @@ async function askChatbot(message) {
       headers: {
         "Content-Type": "application/json"
       },
-      body: JSON.stringify({ message })
+      body: JSON.stringify({ message, history: historyForRequest })
     });
 
     if (!response.ok) {
@@ -249,11 +299,19 @@ async function askChatbot(message) {
     }
 
     const payload = await response.json();
-    appendMessage("bot", payload.answer, payload.sources || []);
+    const answer = payload.answer || "";
+    chatHistory.push({ role: "user", text: message });
+    chatHistory.push({ role: "model", text: answer });
+    if (chatHistory.length > 16) {
+      chatHistory.splice(0, chatHistory.length - 16);
+    }
+    typingMessage.remove();
+    appendMessage("bot", answer);
   } catch (error) {
+    typingMessage.remove();
     appendMessage(
       "bot",
-      "The portfolio assistant is unavailable right now. Please try again in a moment."
+      "The assistant is unavailable right now. Please try again in a moment."
     );
   } finally {
     if (submitButton) {
@@ -261,7 +319,6 @@ async function askChatbot(message) {
       submitButton.textContent = "Send";
     }
     chatInput?.focus();
-    setLoading(false);
   }
 }
 
@@ -274,12 +331,6 @@ chatForm?.addEventListener("submit", (event) => {
   }
 
   askChatbot(message);
-});
-
-suggestionButtons.forEach((button) => {
-  button.addEventListener("click", () => {
-    askChatbot(button.dataset.question || button.textContent || "");
-  });
 });
 
 const text = "Computer Science graduate with hands-on QA experience across CRM and EMR applications. Skilled in manual testing, API testing, SQL validation, and Playwright automation in Agile teams.";
