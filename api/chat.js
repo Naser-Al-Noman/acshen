@@ -2,6 +2,7 @@
 
 const { GoogleGenAI } = require('@google/genai');
 const { createClient } = require('@supabase/supabase-js');
+const { generateQuotaFallback, stripEmojis } = require('../lib/hf-fallback');
 
 const REQUIRED_ENV = ['GEMINI_API_KEY', 'SUPABASE_URL', 'SUPABASE_SERVICE_ROLE_KEY'];
 const envStatus = REQUIRED_ENV.reduce((status, name) => {
@@ -32,18 +33,6 @@ function isQuotaError(err) {
     message.includes('quota exceeded') ||
     message.includes('"code":429') ||
     message.includes('retrydelay')
-  );
-}
-
-function buildDirectContextAnswer(chunks) {
-  const summaries = chunks
-    .slice(0, 2)
-    .map((chunk) => chunk.title + ': ' + chunk.content)
-    .join(' ');
-
-  return (
-    'Gemini is currently rate-limited, so I am sharing the closest portfolio details directly. ' +
-    summaries
   );
 }
 
@@ -88,6 +77,8 @@ function buildSystemInstruction(chunks) {
     'use the PORTFOLIO CONTEXT below and do not invent personal facts. ' +
     'If a factual detail about him is missing, say so briefly and offer what you do know — or suggest contacting him. ' +
     'Keep replies short to medium. Use markdown lightly when it helps. ' +
+    'Never use emoji characters (no smileys, hearts, wave icons, etc). This is mandatory. ' +
+    'If you want to add tone, use plain text expressions only, like :3, :), ^^, or heh. ' +
     'Never list sources, citations, or document titles. Never sound like a corporate FAQ bot.\n\n' +
     'PORTFOLIO CONTEXT:\n' +
     context
@@ -120,7 +111,7 @@ async function generateAnswer(userMessage, chunks, history) {
     history: normalizeHistory(history),
   });
   const response = await chat.sendMessage({ message: userMessage });
-  return response.text;
+  return stripEmojis(response.text);
 }
 
 async function parseRequestBody(req) {
@@ -182,9 +173,13 @@ module.exports = async (req, res) => {
       answer = await generateAnswer(message, chunks, payload.history);
     } catch (generationErr) {
       if (isQuotaError(generationErr)) {
-        answer = chunks.length
-          ? buildDirectContextAnswer(chunks)
-          : 'Gemini quota is currently exhausted, so the assistant cannot generate a response right now. Please retry in about a minute.';
+        console.warn('[chat] Gemini generation quota exceeded; trying Hugging Face fallback.');
+        answer = await generateQuotaFallback({
+          systemInstruction: buildSystemInstruction(chunks),
+          userMessage: message,
+          history: payload.history,
+          chunks,
+        });
       } else {
         throw generationErr;
       }
@@ -193,9 +188,14 @@ module.exports = async (req, res) => {
     sendJson(res, 200, { answer, sources, retrieved: sources });
   } catch (err) {
     if (isQuotaError(err)) {
+      const answer = await generateQuotaFallback({
+        systemInstruction: buildSystemInstruction([]),
+        userMessage: message,
+        history: payload.history,
+        chunks: [],
+      });
       sendJson(res, 200, {
-        answer:
-          'Gemini quota is currently exhausted, so the assistant cannot generate a response right now. Please retry in about a minute or increase Gemini API quota.',
+        answer,
         sources: [],
         retrieved: [],
       });
