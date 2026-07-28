@@ -24,46 +24,80 @@ function showContactStatus(type, message) {
 }
 
 if (contactFormElement) {
-  contactFormElement.addEventListener('submit', async (event) => {
-    event.preventDefault();
-    if (contactSuccess) contactSuccess.style.display = 'none';
-    if (contactError) contactError.style.display = 'none';
+  const contactMessage = document.getElementById("message");
+  const contactMessageError = document.getElementById("contact-message-error");
 
-    if (!contactFormElement.checkValidity()) {
-      contactFormElement.reportValidity();
+  function clearContactFieldError() {
+    contactMessage?.classList.remove("is-invalid");
+    if (contactMessageError) {
+      contactMessageError.hidden = true;
+    }
+  }
+
+  function showContactFieldError() {
+    contactMessage?.classList.add("is-invalid");
+    if (contactMessageError) {
+      contactMessageError.hidden = false;
+    }
+    contactMessage?.focus();
+  }
+
+  contactMessage?.addEventListener("input", clearContactFieldError);
+
+  document.addEventListener("pointerdown", (event) => {
+    if (!contactMessage?.classList.contains("is-invalid")) {
       return;
     }
 
-    const submitButton = contactFormElement.querySelector('.send-button');
+    const wrap = contactMessage.closest(".contact-field-wrap");
+    if (wrap && !wrap.contains(event.target)) {
+      clearContactFieldError();
+    }
+  });
+
+  contactFormElement.addEventListener("submit", async (event) => {
+    event.preventDefault();
+    if (contactSuccess) contactSuccess.style.display = "none";
+    if (contactError) contactError.style.display = "none";
+
+    const message = contactMessage?.value.trim() || "";
+    if (!message) {
+      showContactFieldError();
+      return;
+    }
+
+    clearContactFieldError();
+
+    const submitButton = contactFormElement.querySelector(".send-button");
     if (submitButton) {
       submitButton.disabled = true;
-      submitButton.textContent = 'Sending...';
+      submitButton.textContent = "Sending...";
     }
 
     const formData = new FormData(contactFormElement);
 
     try {
       const response = await fetch(contactFormElement.action, {
-        method: 'POST',
+        method: "POST",
         body: formData,
         headers: {
-          Accept: 'application/json'
+          Accept: "application/json"
         }
       });
 
       const data = await response.json();
       if (!response.ok) {
-        throw new Error(data.error || 'Submission failed. Please try again.');
+        throw new Error(data.error || "Submission failed. Please try again.");
       }
 
-      showContactStatus('success', '✓ Message sent! I’ll get back to you soon.');
+      showContactStatus("success", "✓ Message sent! I’ll get back to you soon.");
       contactFormElement.reset();
     } catch (error) {
-      showContactStatus('error', error.message || 'Unable to send message. Please try again.');
+      showContactStatus("error", error.message || "Unable to send message. Please try again.");
     } finally {
       if (submitButton) {
         submitButton.disabled = false;
-        submitButton.textContent = 'Send Message';
+        submitButton.textContent = "Send Message";
       }
     }
   });
@@ -322,15 +356,43 @@ async function askChatbot(message) {
   }
 }
 
+function clearChatFieldError() {
+  const errorEl = document.getElementById("chat-input-error");
+  chatInput?.classList.remove("is-invalid");
+  if (errorEl) {
+    errorEl.hidden = true;
+  }
+}
+
 chatForm?.addEventListener("submit", (event) => {
   event.preventDefault();
   const message = chatInput?.value.trim();
+  const errorEl = document.getElementById("chat-input-error");
 
   if (!message) {
+    chatInput?.classList.add("is-invalid");
+    if (errorEl) {
+      errorEl.hidden = false;
+    }
+    chatInput?.focus();
     return;
   }
 
+  clearChatFieldError();
   askChatbot(message);
+});
+
+chatInput?.addEventListener("input", clearChatFieldError);
+
+document.addEventListener("pointerdown", (event) => {
+  if (!chatInput?.classList.contains("is-invalid")) {
+    return;
+  }
+
+  const wrap = chatInput.closest(".chat-input-wrap");
+  if (wrap && !wrap.contains(event.target)) {
+    clearChatFieldError();
+  }
 });
 
 const text = "Computer Science graduate with hands-on QA experience across CRM and EMR applications. Skilled in manual testing, API testing, SQL validation, and Playwright automation in Agile teams.";
