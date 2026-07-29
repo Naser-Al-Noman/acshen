@@ -4,8 +4,8 @@
       "id": "profile",
       "title": "Profile & Summary",
       "section": "about",
-      "content": "Naser Al Noman is a Computer Science graduate with hands-on experience in Software Quality Assurance across CRM and EMR web applications. He is proficient in manual testing, API testing, SQL-based data validation, regression testing, and Playwright automation. He is adept at collaborating with cross-functional teams in Agile environments to deliver reliable software while continuously improving testing processes through automation and AI-assisted workflows.",
-      "metadata": { "keywords": ["profile", "summary", "QA engineer", "CRM", "EMR", "Playwright", "API testing", "Agile", "about", "computer science"] }
+      "content": "Naser Al Noman is a Computer Science graduate with hands-on Software Quality Assurance experience testing CRM and EMR web applications. He is skilled in manual testing, REST API validation, SQL-based database verification, regression testing, and Playwright test automation. He has experience collaborating with cross-functional teams in Agile environments to deliver high-quality software through frequent release cycles and continuous process improvement.",
+      "metadata": { "keywords": ["profile", "summary", "QA engineer", "CRM", "EMR", "Playwright", "REST API testing", "SQL", "Agile", "release cycles", "about", "computer science"] }
     },
     {
       "id": "contact",
@@ -18,8 +18,8 @@
       "id": "experience-sj-innovation-trainee",
       "title": "SJ Innovation LLC – Software Quality Assurance Engineer (Trainee)",
       "section": "experience",
-      "content": "Naser worked as a Software Quality Assurance Engineer (Trainee) at SJ Innovation LLC from March 2026 to July 2026, based in Dhaka, Bangladesh. He designed, executed, and maintained manual test cases for CRM and EMR web applications, ensuring comprehensive functional and regression coverage. He performed API testing using Postman and validated backend data through SQL queries and database verification. He identified, documented, and tracked defects in collaboration with developers, ensuring timely resolution and high software quality. He automated end-to-end test scenarios using Playwright to reduce repetitive manual testing efforts. He was nominated as Performer of the Month for contributions in the CRM project.",
-      "metadata": { "keywords": ["SJ Innovation", "trainee", "QA Engineer", "CRM", "EMR", "Playwright", "Postman", "SQL", "API testing", "regression", "performer of the month"] }
+      "content": "Naser worked as a Software Quality Assurance Engineer (Trainee) at SJ Innovation LLC from March 2026 to July 2026, based in Dhaka, Bangladesh. He designed and executed manual test cases while supporting regression, smoke, and release validation for frequent software deployments. He performed REST API testing using Postman, validated backend business logic, and verified database integrity using SQL. He identified, documented, and tracked defects in JIRA, collaborating closely with developers to ensure timely resolution and high software quality. He investigated application issues using API responses, browser developer tools, and application logs. He automated end-to-end test scenarios using Playwright to reduce repetitive manual testing efforts. He collaborated with developers, QA engineers, and product stakeholders to clarify requirements and improve software quality. He was nominated as Performer of the Month for contributions in the CRM project.",
+      "metadata": { "keywords": ["SJ Innovation", "trainee", "QA Engineer", "CRM", "Playwright", "Postman", "JIRA", "SQL", "REST API testing", "smoke testing", "regression", "release validation", "developer tools", "application logs", "performer of the month"] }
     },
     {
       "id": "experience-sj-innovation-internship",
@@ -46,8 +46,8 @@
       "id": "skills",
       "title": "Technical Skills",
       "section": "skills",
-      "content": "Programming: Python (Flask, Django), JavaScript, HTML, CSS. Software Testing: Manual Testing, Functional Testing, Regression Testing, Smoke Testing, Integration Testing, API Testing, End-to-End Testing, Test Case Design. Testing Tools: Playwright, Selenium, Cypress, Postman, JMeter. Database: MySQL, MongoDB, SQLite, SQL Querying, Data Validation. Development Tools: Git, GitHub, Cursor AI, VS Code. Methodologies: Agile (Scrum), Bug Tracking, Test Documentation. Other: LaTeX, Arduino.",
-      "metadata": { "keywords": ["skills", "python", "javascript", "playwright", "selenium", "cypress", "postman", "jmeter", "mysql", "mongodb", "sqlite", "git", "cursor ai", "agile", "scrum", "manual testing", "api testing"] }
+      "content": "Programming: Python, JavaScript. Software Testing: Manual Testing, Functional Testing, Regression Testing, Smoke Testing, BDD (Gherkin), Integration Testing, REST API Testing, End-to-End Testing, Test Case Design. Testing Tools: Playwright, Postman, JIRA, Selenium, Cypress, JMeter. Database: MySQL, MongoDB, SQLite, SQL Querying, Data Validation. Development Tools: Git, GitHub, GitHub Actions, VS Code. Methodologies: Agile (Scrum, Kanban), Bug Tracking, Test Documentation. Other: LaTeX, Arduino.",
+      "metadata": { "keywords": ["skills", "python", "javascript", "playwright", "selenium", "cypress", "postman", "jira", "jmeter", "mysql", "mongodb", "sqlite", "git", "github actions", "agile", "scrum", "kanban", "bdd", "gherkin", "manual testing", "rest api testing"] }
     },
     {
       "id": "education",
@@ -74,8 +74,8 @@
       "id": "references",
       "title": "Professional References",
       "section": "references",
-      "content": "Naser's professional reference is Rajib Chowdhury, Module Lead at SJ Innovation LLC. Contact: rajib.brunel@yahoo.co.uk. Phone: +8801776220433. LinkedIn: https://www.linkedin.com/in/rajib-chowdhury-brunel/. Rajib Chowdhury has 20+ years of experience in the software industry.",
-      "metadata": { "keywords": ["references", "Rajib Chowdhury", "Module Lead", "SJ Innovation", "recommendation"] }
+      "content": "Naser's professional references are Rajib Chowdhury and Tamzida Azad. Rajib Chowdhury is a Module Lead at SJ Innovation LLC with 20+ years of experience in the software industry. Contact: rajib.brunel@yahoo.co.uk. Phone: +8801776220433. LinkedIn: https://www.linkedin.com/in/rajib-chowdhury-brunel/. Tamzida Azad is an SQA Engineer L3 at SJ Innovation LLC with 4+ years of Software Quality Assurance experience. Contact: tamzida.azad@sjinnovation.com. LinkedIn: https://bd.linkedin.com/in/tamzidaazad.",
+      "metadata": { "keywords": ["references", "Rajib Chowdhury", "Tamzida Azad", "Module Lead", "SQA Engineer L3", "SJ Innovation", "recommendation"] }
     }
   ]
 }

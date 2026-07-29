@@ -131,6 +131,44 @@ body[data-theme="light"] {
   margin-bottom: 18px;
 }
 
+.hero-body {
+  display: grid;
+  grid-template-columns: minmax(260px, 320px) minmax(0, 1fr);
+  gap: clamp(28px, 5vw, 52px);
+  align-items: center;
+}
+
+.hero-content {
+  min-width: 0;
+  margin: 0;
+}
+
+.hero-content .lead {
+  margin-top: 0;
+}
+
+.hero-portrait {
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding: 5px;
+  border: 1px solid rgba(var(--accent-rgb), 0.5);
+  border-radius: 22px;
+  background: linear-gradient(145deg, rgba(var(--accent-rgb), 0.14), rgba(255, 255, 255, 0.03));
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.28), 0 0 0 1px rgba(var(--accent-rgb), 0.08);
+}
+
+.hero-portrait img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+}
+
+:root[data-theme="light"] .hero-portrait {
+  box-shadow: 0 16px 32px rgba(15, 23, 42, 0.14), 0 0 0 1px rgba(var(--accent-rgb), 0.1);
+}
+
 .theme-toggle {
   display: inline-flex;
   align-items: center;
@@ -1435,6 +1473,17 @@ a:hover {
   }
 }
 
+@media (max-width: 760px) {
+  .hero-body {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .hero-portrait {
+    width: min(300px, 82vw);
+  }
+}
+
 @media (max-width: 640px) {
   .layout {
     margin: 28px auto;
@@ -1443,6 +1492,11 @@ a:hover {
 
   .card {
     padding: 18px;
+  }
+
+  .hero-portrait {
+    width: min(280px, 82vw);
+    margin: 0;
   }
 
   .contact-info {

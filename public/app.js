@@ -395,7 +395,7 @@ document.addEventListener("pointerdown", (event) => {
   }
 });
 
-const text = "Computer Science graduate with hands-on QA experience across CRM and EMR applications. Skilled in manual testing, API testing, SQL validation, and Playwright automation in Agile teams.";
+const text = "Computer Science graduate with hands-on Software Quality Assurance experience testing CRM and EMR web applications. Skilled in manual testing, REST API validation, SQL-based database verification, regression testing, and Playwright test automation.";
 const typingText = document.getElementById("typing-text");
 let typingIndex = 0;
 
