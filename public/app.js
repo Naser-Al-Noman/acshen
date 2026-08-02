@@ -152,8 +152,7 @@ function applyTheme(theme) {
 
 function initTheme() {
   const storedTheme = localStorage.getItem("theme");
-  const prefersLight = window.matchMedia("(prefers-color-scheme: light)").matches;
-  const theme = storedTheme || (prefersLight ? "light" : "dark");
+  const theme = storedTheme || "dark";
   applyTheme(theme);
 }
 
