@@ -135,6 +135,12 @@ body[data-theme="light"] {
   border: 1px solid var(--line);
   border-radius: var(--radius);
   box-shadow: var(--shadow);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.site-nav:hover {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 1px rgba(var(--accent-rgb), 0.35), var(--shadow);
 }
 
 :root[data-theme="light"] .site-nav {
