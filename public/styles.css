@@ -689,6 +689,77 @@ h3 {
   text-decoration: underline;
 }
 
+.contact-body {
+  display: grid;
+  grid-template-columns: minmax(220px, 0.9fr) minmax(0, 1.4fr);
+  gap: 28px;
+  align-items: start;
+}
+
+.contact-details {
+  display: grid;
+  gap: 20px;
+}
+
+.contact-detail-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 16px;
+}
+
+.contact-detail-list li {
+  display: grid;
+  gap: 6px;
+}
+
+.contact-detail-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.contact-detail-label svg {
+  color: var(--accent);
+  flex-shrink: 0;
+}
+
+.contact-detail-value {
+  color: var(--text);
+  font-size: 0.98rem;
+  font-weight: 500;
+  line-height: 1.4;
+  text-decoration: none;
+  word-break: break-word;
+}
+
+a.contact-detail-value {
+  color: var(--accent);
+  border-bottom: 1px solid transparent;
+  width: fit-content;
+  transition: border-color 0.2s ease;
+}
+
+a.contact-detail-value:hover,
+a.contact-detail-value:focus-visible {
+  border-bottom-color: var(--accent);
+}
+
+.contact-socials {
+  margin-top: 0;
+  flex-wrap: wrap;
+}
+
+.contact-form-panel {
+  min-width: 0;
+}
+
 .contact-form {
   display: grid;
   gap: 18px;
@@ -1673,6 +1744,11 @@ a:hover {
     margin-left: 0;
     margin-top: 4px;
     justify-content: center;
+  }
+
+  .contact-body {
+    grid-template-columns: 1fr;
+    gap: 24px;
   }
 }
 
