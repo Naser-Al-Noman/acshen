@@ -419,3 +419,73 @@ window.addEventListener("load", () => {
     setChatState(chatWidget.dataset.chatState === "open");
   }
 });
+
+const navToggle = document.querySelector("#nav-menu-toggle");
+const navMenu = document.querySelector("#site-nav-menu");
+const navLinks = navMenu ? Array.from(navMenu.querySelectorAll("a[href^='#']")) : [];
+const sectionIds = navLinks
+  .map((link) => link.getAttribute("href")?.slice(1))
+  .filter(Boolean);
+const navSections = sectionIds
+  .map((id) => document.getElementById(id))
+  .filter(Boolean);
+
+function setNavOpen(isOpen) {
+  if (!navToggle || !navMenu) return;
+  navMenu.classList.toggle("is-open", isOpen);
+  navToggle.setAttribute("aria-expanded", String(isOpen));
+  navToggle.setAttribute("aria-label", isOpen ? "Close menu" : "Open menu");
+}
+
+function setActiveNavLink(activeId) {
+  navLinks.forEach((link) => {
+    const isActive = link.getAttribute("href") === `#${activeId}`;
+    link.classList.toggle("is-active", isActive);
+  });
+}
+
+if (navToggle && navMenu) {
+  navToggle.addEventListener("click", () => {
+    setNavOpen(!navMenu.classList.contains("is-open"));
+  });
+
+  navLinks.forEach((link) => {
+    link.addEventListener("click", () => setNavOpen(false));
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+      setNavOpen(false);
+    }
+  });
+}
+
+if (navSections.length > 0) {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      const visible = entries
+        .filter((entry) => entry.isIntersecting)
+        .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
+
+      if (visible[0]?.target?.id) {
+        setActiveNavLink(visible[0].target.id);
+      }
+    },
+    {
+      rootMargin: "-20% 0px -55% 0px",
+      threshold: [0.1, 0.25, 0.5],
+    }
+  );
+
+  navSections.forEach((section) => observer.observe(section));
+
+  window.addEventListener(
+    "scroll",
+    () => {
+      if (window.scrollY < 120) {
+        navLinks.forEach((link) => link.classList.remove("is-active"));
+      }
+    },
+    { passive: true }
+  );
+}

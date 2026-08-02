@@ -22,9 +22,37 @@
     <div class="ambient ambient-one" aria-hidden="true"></div>
     <div class="ambient ambient-two" aria-hidden="true"></div>
 
+    <nav class="site-nav" aria-label="Primary">
+      <div class="site-nav-inner">
+        <a class="site-nav-brand" href="#top" aria-label="Naser Al Noman — Home">
+          <span class="site-nav-logo" aria-hidden="true">NN<span class="site-nav-dot"></span></span>
+        </a>
+        <button
+          type="button"
+          class="nav-menu-toggle"
+          id="nav-menu-toggle"
+          aria-controls="site-nav-menu"
+          aria-expanded="false"
+          aria-label="Open menu"
+        >
+          <span class="nav-menu-toggle-bar" aria-hidden="true"></span>
+          <span class="nav-menu-toggle-bar" aria-hidden="true"></span>
+          <span class="nav-menu-toggle-bar" aria-hidden="true"></span>
+        </button>
+        <ul class="site-nav-links" id="site-nav-menu">
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#education">Education</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#achievements">Achievements</a></li>
+          <li><a class="site-nav-cta" href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+
     <main class="layout">
       <!-- Hero Section -->
-      <header class="hero card">
+      <header class="hero card" id="top">
         <div class="hero-top">
           <div>
             <p class="tag">Software Quality Assurance Engineer</p>
@@ -81,7 +109,7 @@
       </header>
 
       <!-- Experience Section -->
-      <section class="card">
+      <section class="card" id="experience">
         <h2>Experience</h2>
         <div class="timeline">
           <article class="timeline-item">
@@ -123,7 +151,7 @@
       </section>
 
       <!-- Extracurricular Section -->
-      <section class="card">
+      <section class="card" id="extracurricular">
         <h2>Extracurricular</h2>
         <div class="timeline">
           <article class="timeline-item">
@@ -161,7 +189,7 @@
       </section>
 
       <!-- Skills Section -->
-      <section class="card">
+      <section class="card" id="skills">
         <h2>Technical Skills</h2>
         <dl class="skills-list">
           <div class="skills-row skills-row-chips">
@@ -234,7 +262,7 @@
       </section>
 
       <!-- Education Section -->
-      <section class="card">
+      <section class="card" id="education">
         <h2>Education</h2>
         <div class="education-grid">
           <article class="edu-item">
@@ -263,7 +291,7 @@
       </section>
 
       <!-- Projects Section -->
-      <section class="card">
+      <section class="card" id="projects">
         <h2>Projects</h2>
         <div class="projects">
           <article class="project-card">
@@ -321,7 +349,7 @@
       </section>
 
       <!-- Achievements Section -->
-      <section class="card">
+      <section class="card" id="achievements">
         <h2>Achievements & Awards</h2>
         <ul class="achievements">
           <li>
@@ -355,7 +383,7 @@
       </section>
 
       <!-- Contact Section -->
-      <section class="card contact-card">
+      <section class="card contact-card" id="contact">
         <div class="contact-heading">
           <div>
             <h2>Let’s connect</h2>
