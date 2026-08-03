@@ -46,8 +46,8 @@
       "id": "skills",
       "title": "Technical Skills",
       "section": "skills",
-      "content": "Programming: Python, JavaScript. Software Testing: Manual Testing, Functional Testing, Regression Testing, Smoke Testing, BDD (Gherkin), Integration Testing, REST API Testing, End-to-End Testing, Test Case Design. Testing Tools: Postman, Playwright, Selenium, JIRA, JMeter. Database: MySQL, MongoDB, SQLite, SQL Querying, Data Validation. Development Tools: Git, GitHub, GitHub Actions, VS Code. Methodologies: Agile (Scrum, Kanban), Bug Tracking, Test Documentation. Other: LaTeX, Arduino.",
-      "metadata": { "keywords": ["skills", "python", "javascript", "playwright", "selenium", "postman", "jira", "jmeter", "mysql", "mongodb", "sqlite", "git", "github actions", "agile", "scrum", "kanban", "bdd", "gherkin", "manual testing", "rest api testing"] }
+      "content": "Programming: Python, JavaScript. Software Testing: Manual Testing, Functional Testing, Regression Testing, Smoke Testing, BDD (Gherkin), Integration Testing, REST API Testing, End-to-End Testing, Test Case Design. Testing Tools: Postman, Playwright, Selenium, Cypress, JIRA, JMeter. Database: MySQL, MongoDB, SQLite, SQL Querying, Data Validation. Development Tools: Git, GitHub, GitHub Actions, VS Code. Methodologies: Agile (Scrum, Kanban), Bug Tracking, Test Documentation. Other: LaTeX, Arduino.",
+      "metadata": { "keywords": ["skills", "python", "javascript", "playwright", "selenium", "cypress", "postman", "jira", "jmeter", "mysql", "mongodb", "sqlite", "git", "github actions", "agile", "scrum", "kanban", "bdd", "gherkin", "manual testing", "rest api testing"] }
     },
     {
       "id": "education",
