@@ -18,7 +18,7 @@
       "id": "experience-sj-innovation-trainee",
       "title": "SJ Innovation LLC – Software Quality Assurance Engineer (Trainee)",
       "section": "experience",
-      "content": "Naser worked as a Software Quality Assurance Engineer (Trainee) at SJ Innovation LLC from March 2026 to July 2026, based in Dhaka, Bangladesh. He designed and executed manual test cases while supporting regression, smoke, and release validation for frequent software deployments. He performed REST API testing using Postman, validated backend business logic, and verified database integrity using SQL. He identified, documented, and tracked defects in JIRA, collaborating closely with developers to ensure timely resolution and high software quality. He investigated application issues using API responses, browser developer tools, and application logs. He automated end-to-end test scenarios using Playwright to reduce repetitive manual testing efforts. He collaborated with developers, QA engineers, and product stakeholders to clarify requirements and improve software quality. He was nominated as Performer of the Month for contributions in the CRM project.",
+      "content": "Naser worked as a Software Quality Assurance Engineer (Trainee) at SJ Innovation LLC from March 2026 to July 2026, based in Dhaka, Bangladesh. He designed and executed manual test cases and test scenarios while performing functional, regression, smoke, and release validation for frequent software deployments. He performed REST API testing using Postman, validated backend business logic, and verified database integrity using SQL. He identified, documented, and tracked defects in JIRA, collaborating closely with developers to ensure timely resolution and high software quality. He investigated application issues using API responses, browser developer tools, and application logs. He automated end-to-end test scenarios using Playwright to reduce repetitive manual testing efforts. He collaborated with developers, QA engineers, and product stakeholders to clarify requirements and improve software quality. He was nominated as Performer of the Month for contributions in the CRM project.",
       "metadata": { "keywords": ["SJ Innovation", "trainee", "QA Engineer", "CRM", "Playwright", "Postman", "JIRA", "SQL", "REST API testing", "smoke testing", "regression", "release validation", "developer tools", "application logs", "performer of the month"] }
     },
     {
@@ -32,7 +32,7 @@
       "id": "experience-mongol-tori",
       "title": "Mongol Tori – Research & Documentation, AI & Autonomous Subteam",
       "section": "extracurricular",
-      "content": "Naser worked in the Research & Documentation role on the AI & Autonomous Subteam at Mongol Tori from October 2022 to December 2024, based in Dhaka, Bangladesh. He contributed to test planning and validation of AI models and autonomous navigation logic, identifying performance issues and documenting test outcomes. He collected and analyzed performance data from rover sensors to improve autonomous navigation. He implemented data-driven decision logic using Python and ROS for object detection, and maintained versioned datasets and documented insights for the research team.",
+      "content": "Naser worked in the Research & Documentation role on the AI & Autonomous Subteam at Mongol Tori from October 2022 to December 2024, based in Dhaka, Bangladesh. He contributed to test planning and validation of AI models and autonomous navigation logic, identifying performance issues and documenting test outcomes. He implemented data-driven decision logic using Python and ROS for object detection. He collected and analyzed performance data from rover sensors to validate autonomous navigation behavior and identify system performance issues.",
       "metadata": { "keywords": ["Mongol Tori", "AI", "autonomous", "research", "documentation", "Python", "ROS", "object detection", "rover", "extracurricular"] }
     },
     {
@@ -46,8 +46,8 @@
       "id": "skills",
       "title": "Technical Skills",
       "section": "skills",
-      "content": "Programming: Python, JavaScript. Software Testing: Manual Testing, Functional Testing, Regression Testing, Smoke Testing, BDD (Gherkin), Integration Testing, REST API Testing, End-to-End Testing, Test Case Design. Testing Tools: Playwright, Postman, JIRA, Selenium, Cypress, JMeter. Database: MySQL, MongoDB, SQLite, SQL Querying, Data Validation. Development Tools: Git, GitHub, GitHub Actions, VS Code. Methodologies: Agile (Scrum, Kanban), Bug Tracking, Test Documentation. Other: LaTeX, Arduino.",
-      "metadata": { "keywords": ["skills", "python", "javascript", "playwright", "selenium", "cypress", "postman", "jira", "jmeter", "mysql", "mongodb", "sqlite", "git", "github actions", "agile", "scrum", "kanban", "bdd", "gherkin", "manual testing", "rest api testing"] }
+      "content": "Programming: Python, JavaScript. Software Testing: Manual Testing, Functional Testing, Regression Testing, Smoke Testing, BDD (Gherkin), Integration Testing, REST API Testing, End-to-End Testing, Test Case Design. Testing Tools: Postman, Playwright, Selenium, JIRA, JMeter. Database: MySQL, MongoDB, SQLite, SQL Querying, Data Validation. Development Tools: Git, GitHub, GitHub Actions, VS Code. Methodologies: Agile (Scrum, Kanban), Bug Tracking, Test Documentation. Other: LaTeX, Arduino.",
+      "metadata": { "keywords": ["skills", "python", "javascript", "playwright", "selenium", "postman", "jira", "jmeter", "mysql", "mongodb", "sqlite", "git", "github actions", "agile", "scrum", "kanban", "bdd", "gherkin", "manual testing", "rest api testing"] }
     },
     {
       "id": "education",
