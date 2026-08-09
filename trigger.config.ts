@@ -3,7 +3,7 @@ import { defineConfig } from "@trigger.dev/sdk";
 export default defineConfig({
   // Project ref from Trigger.dev dashboard (Portfolio site)
   project: process.env.TRIGGER_PROJECT_REF || "proj_ogdkxvtjyxoitiaemibx",
-  runtime: "node",
+  runtime: "node-22",
   logLevel: "log",
   maxDuration: 300,
   retries: {
