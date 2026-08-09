@@ -307,8 +307,9 @@ function sleep(ms) {
 }
 
 async function waitForChatJob(runId) {
-  const maxAttempts = 60;
-  const pollMs = 1000;
+  const maxAttempts = 120;
+  // Poll quickly at first, then ease off a little.
+  const pollMsForAttempt = (attempt) => (attempt < 8 ? 250 : 400);
 
   for (let attempt = 0; attempt < maxAttempts; attempt += 1) {
     const response = await fetch(`/api/chat?runId=${encodeURIComponent(runId)}`);
@@ -322,7 +323,7 @@ async function waitForChatJob(runId) {
       throw new Error(payload.error || "Chat job failed.");
     }
 
-    await sleep(pollMs);
+    await sleep(pollMsForAttempt(attempt));
   }
 
   throw new Error("Chat job timed out.");
