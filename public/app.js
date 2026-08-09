@@ -302,6 +302,32 @@ function showTypingIndicator() {
 
 const chatHistory = [];
 
+function sleep(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
+async function waitForChatJob(runId) {
+  const maxAttempts = 60;
+  const pollMs = 1000;
+
+  for (let attempt = 0; attempt < maxAttempts; attempt += 1) {
+    const response = await fetch(`/api/chat?runId=${encodeURIComponent(runId)}`);
+    const payload = await response.json().catch(() => ({}));
+
+    if (payload.status === "COMPLETED" && payload.answer != null) {
+      return payload;
+    }
+
+    if (payload.status === "FAILED" || (!response.ok && payload.error)) {
+      throw new Error(payload.error || "Chat job failed.");
+    }
+
+    await sleep(pollMs);
+  }
+
+  throw new Error("Chat job timed out.");
+}
+
 async function askChatbot(message) {
   if (chatWidget?.dataset.chatState !== "open") {
     setChatState(true);
@@ -331,7 +357,13 @@ async function askChatbot(message) {
       throw new Error("Chat request failed.");
     }
 
-    const payload = await response.json();
+    let payload = await response.json();
+
+    // Trigger.dev async path: Vercel only starts the job, then we poll for the answer.
+    if (payload.mode === "async" && payload.runId) {
+      payload = await waitForChatJob(payload.runId);
+    }
+
     const answer = payload.answer || "";
     chatHistory.push({ role: "user", text: message });
     chatHistory.push({ role: "model", text: answer });

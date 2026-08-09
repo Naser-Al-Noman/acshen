@@ -6,6 +6,8 @@
   "scripts": {
     "start": "node server.js",
     "dev": "node server.js",
+    "trigger:dev": "npx trigger.dev@latest dev",
+    "trigger:deploy": "npx trigger.dev@latest deploy",
     "ingest": "node scripts/ingest.js",
     "ingest:verify": "node scripts/verify-ingestion.js",
     "sync": "npm run ingest && npm run ingest:verify"
@@ -20,7 +22,11 @@
   "dependencies": {
     "@google/genai": "^1.52.0",
     "@supabase/supabase-js": "^2.105.3",
+    "@trigger.dev/sdk": "4.5.10",
     "@vercel/analytics": "^2.0.1",
     "dotenv": "^17.4.2"
+  },
+  "devDependencies": {
+    "typescript": "^5.9.2"
   }
 }
