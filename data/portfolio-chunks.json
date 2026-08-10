@@ -29,6 +29,13 @@
       "metadata": { "keywords": ["SJ Innovation", "internship", "QA Engineer", "EMR", "manual testing", "defects", "performer of the month"] }
     },
     {
+      "id": "experience-render-lab",
+      "title": "Render Lab – Software Quality Assurance Engineer (Part-Time)",
+      "section": "experience",
+      "content": "Naser worked as a Software Quality Assurance Engineer (Part-Time) at Render Lab from June 2025 to November 2025, based in Dhaka, Bangladesh. He performed functional, regression, smoke, and integration testing for mobile applications across iOS and Android devices, validating features, workflows, UI behavior, and cross-device compatibility. He tested end-to-end web-based applications, validating functionality, user workflows, business requirements, and overall application behavior across different scenarios. He conducted User Acceptance Testing (UAT) to validate application features against business requirements and ensure readiness for release. He identified, reproduced, documented, and reported defects with clear reproduction steps, expected versus actual results, and supporting evidence. He collaborated with developers and project stakeholders to investigate defects, communicate testing findings, verify fixes, and support successful releases.",
+      "metadata": { "keywords": ["Render Lab", "part-time", "QA Engineer", "mobile testing", "iOS", "Android", "UAT", "functional testing", "regression", "smoke testing", "integration testing", "web applications", "defect reporting"] }
+    },
+    {
       "id": "experience-mongol-tori",
       "title": "Mongol Tori – Research & Documentation, AI & Autonomous Subteam",
       "section": "extracurricular",
