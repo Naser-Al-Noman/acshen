@@ -334,7 +334,7 @@ async function askChatbot(message) {
     setChatState(true);
   }
 
-  const historyForRequest = chatHistory.slice(-8);
+  const historyForRequest = chatHistory.slice(-4);
   appendMessage("user", message);
   chatInput.value = "";
 

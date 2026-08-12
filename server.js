@@ -13,12 +13,29 @@ const RESUME_DIR = path.join(__dirname, 'resume');
 const ACHIEVEMENTS_DIR = path.join(__dirname, 'achievements');
 const MAX_BODY_SIZE = 1024 * 32; // 32 KB
 
-const REQUIRED_ENV = ['GEMINI_API_KEY', 'SUPABASE_URL', 'SUPABASE_SERVICE_ROLE_KEY'];
+const REQUIRED_ENV = ['GEMINI_API_KEY'];
+const useVectorSearch = !['0', 'false', 'no'].includes(
+  String(process.env.CHAT_USE_VECTOR_SEARCH ?? 'true')
+    .trim()
+    .toLowerCase()
+);
+const vectorBackend = String(process.env.CHAT_VECTOR_BACKEND || 'local')
+  .trim()
+  .toLowerCase();
+if (useVectorSearch && vectorBackend === 'supabase') {
+  REQUIRED_ENV.push('SUPABASE_URL', 'SUPABASE_SERVICE_ROLE_KEY');
+}
 const missingEnv = REQUIRED_ENV.filter((k) => !process.env[k]);
 if (missingEnv.length) {
   console.error('[server] Missing required environment variables:', missingEnv.join(', '));
   console.error('[server] Copy .env.example to .env and fill in the values.');
   process.exit(1);
+}
+
+const { warmupChat, warmupEmbed } = require('./lib/rag-chat');
+warmupChat();
+if (useVectorSearch) {
+  warmupEmbed().catch(() => {});
 }
 
 const MIME_TYPES = {

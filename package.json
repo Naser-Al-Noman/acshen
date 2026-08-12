@@ -10,7 +10,8 @@
     "trigger:deploy": "npx trigger.dev@latest deploy",
     "ingest": "node scripts/ingest.js",
     "ingest:verify": "node scripts/verify-ingestion.js",
-    "sync": "npm run ingest && npm run ingest:verify"
+    "build:embeddings": "node scripts/build-embeddings.js",
+    "sync": "npm run ingest && npm run ingest:verify && npm run build:embeddings"
   },
   "keywords": [
     "portfolio",

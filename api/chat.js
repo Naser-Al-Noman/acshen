@@ -1,8 +1,21 @@
 'use strict';
 
 const { startChatJob, getChatJobStatus } = require('../lib/chat-jobs');
+const { warmupChat, warmupEmbed } = require('../lib/rag-chat');
 
-const REQUIRED_ENV = ['GEMINI_API_KEY', 'SUPABASE_URL', 'SUPABASE_SERVICE_ROLE_KEY'];
+const REQUIRED_ENV = ['GEMINI_API_KEY'];
+const useVectorSearch = !['0', 'false', 'no'].includes(
+  String(process.env.CHAT_USE_VECTOR_SEARCH ?? 'true')
+    .trim()
+    .toLowerCase()
+);
+const vectorBackend = String(process.env.CHAT_VECTOR_BACKEND || 'local')
+  .trim()
+  .toLowerCase();
+if (useVectorSearch && vectorBackend === 'supabase') {
+  REQUIRED_ENV.push('SUPABASE_URL', 'SUPABASE_SERVICE_ROLE_KEY');
+}
+
 const envStatus = REQUIRED_ENV.reduce((status, name) => {
   status[name] = Boolean(process.env[name]);
   return status;
@@ -12,6 +25,11 @@ console.log('[chat] Environment variable status:', envStatus);
 if (missingEnv.length) {
   console.error('[chat] Missing required environment variables:', missingEnv.join(', '));
   throw new Error(`Missing required environment variables: ${missingEnv.join(', ')}`);
+}
+
+warmupChat();
+if (useVectorSearch) {
+  warmupEmbed().catch(() => {});
 }
 
 function sendJson(res, statusCode, payload) {

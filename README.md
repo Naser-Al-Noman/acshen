@@ -21,7 +21,7 @@ Optional [Trigger.dev](https://trigger.dev) support runs the RAG pipeline as a b
 - **Frontend:** HTML5, CSS3, JavaScript (ES6+)
 - **Backend:** Node.js (`server.js` locally) / Vercel Serverless Functions
 - **Database:** Supabase (PostgreSQL with `pgvector`)
-- **Primary AI:** Google Gemini (`gemini-2.5-flash`, `gemini-embedding-001`)
+- **Primary AI:** Google Gemini (`gemini-flash-lite-latest`; optional embed + Supabase vector search)
 - **Fallback AI:** Hugging Face Inference Providers (default: `Qwen/Qwen3-4B-Instruct-2507`)
 - **Background jobs (optional):** Trigger.dev (`rag-chat` task)
 
@@ -46,13 +46,17 @@ Copy `.env.example` to `.env` and fill in the values:
 # Google Gemini API
 GEMINI_API_KEY=your_gemini_api_key_here
 GEMINI_EMBED_MODEL=gemini-embedding-001
-GEMINI_CHAT_MODEL=gemini-2.5-flash
+GEMINI_CHAT_MODEL=gemini-flash-lite-latest
+GEMINI_MAX_OUTPUT_TOKENS=160
+CHAT_HISTORY_TURNS=4
+CHAT_USE_VECTOR_SEARCH=true
+# CHAT_USE_VECTOR_SEARCH=false
 
 # Hugging Face (optional Gemini quota fallback)
 HF_TOKEN=hf_your_token_here
 HF_CHAT_MODEL=Qwen/Qwen3-4B-Instruct-2507
 
-# Supabase
+# Supabase (required for ingest / optional vector search)
 SUPABASE_URL=https://your-project-id.supabase.co
 SUPABASE_SERVICE_ROLE_KEY=your_service_role_key_here
 
@@ -67,6 +71,8 @@ CHAT_VIA_TRIGGER=false
 ```
 
 `HF_TOKEN` is optional. Without it, Gemini quota failures fall back to a short raw-context summary instead of another LLM.
+
+Chat uses semantic matching by default via `data/portfolio-embeddings.json` (~1–1.5s). Set `CHAT_USE_VECTOR_SEARCH=false` for faster keyword-only matching (~sub-1s). Run `npm run build:embeddings` after editing portfolio chunks. Set `CHAT_VECTOR_BACKEND=supabase` only for legacy Supabase RPC retrieval.
 
 ### 4. Database Setup
 1. Open the Supabase SQL Editor in your project dashboard.
@@ -89,9 +95,9 @@ Open [http://localhost:3000](http://localhost:3000).
 ## How the Chatbot Works
 
 1. The client sends the latest message plus recent chat history to `POST /api/chat`.
-2. The query is embedded with Gemini and matched against portfolio chunks in Supabase.
-3. Gemini answers using portfolio context when relevant, or general knowledge for other questions.
-4. If Gemini hits quota/rate limits, the server tries Hugging Face with the same system prompt and context.
+2. By default the server embeds the query and matches against precomputed vectors in `data/portfolio-embeddings.json` (~1–1.5s). Set `CHAT_USE_VECTOR_SEARCH=false` for keyword-only matching. Use `CHAT_VECTOR_BACKEND=supabase` only if you want live DB retrieval instead.
+3. Gemini Flash-Lite answers using that context when relevant, or general knowledge for other questions.
+4. If Gemini hits quota/rate limits, the server tries Hugging Face first (short timeout); if that fails or times out, it falls back to a local portfolio snippet when context is available. Set `HF_SKIP_WHEN_CONTEXT=true` to skip HF and use local context immediately.
 5. Replies are returned as markdown-friendly text; the UI renders bold/lists and strips emoji characters.
 
 ### Sync vs Trigger chat
