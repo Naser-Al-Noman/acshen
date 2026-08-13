@@ -313,6 +313,8 @@ body[data-theme="light"] {
   grid-template-columns: minmax(260px, 356px) minmax(0, 1fr);
   gap: clamp(28px, 5vw, 52px);
   align-items: start;
+  min-width: 0;
+  max-width: 100%;
 }
 
 .hero-content {
@@ -365,6 +367,7 @@ body[data-theme="light"] {
 .hero-portrait img {
   display: block;
   width: 100%;
+  max-width: 100%;
   height: auto;
   border-radius: 16px;
 }
@@ -490,6 +493,8 @@ body[data-theme="light"] {
 .hero-location {
   display: block;
   margin: 16px 0 18px;
+  max-width: 100%;
+  min-width: 0;
   overflow: hidden;
   border: 1px solid var(--line);
   border-radius: var(--radius);
@@ -515,6 +520,10 @@ body[data-theme="light"] {
   --loc-y: 44.228%;
   position: relative;
   overflow: hidden;
+  isolation: isolate;
+  contain: paint;
+  max-width: 100%;
+  min-width: 0;
   aspect-ratio: 1.9 / 1;
   background: #050a14;
 }
@@ -533,7 +542,10 @@ body[data-theme="light"] {
 .loc-world {
   display: block;
   width: 100%;
+  max-width: 100%;
+  min-width: 0;
   height: 100%;
+  object-fit: cover;
   animation: loc-world-fade var(--loc-cycle) var(--loc-ease) infinite;
 }
 
@@ -908,6 +920,10 @@ body[data-theme="light"] {
   padding: 28px;
   box-shadow: var(--shadow);
   transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
+}
+
+.hero.card {
+  overflow-x: hidden;
 }
 
 .layout > .card {
@@ -2796,7 +2812,7 @@ a:hover {
   }
 
   .hero-portrait-wrap {
-    width: min(336px, 90vw);
+    width: min(336px, 100%);
     justify-self: center;
     margin-top: 0;
   }
@@ -2895,7 +2911,7 @@ a:hover {
   }
 
   .hero-portrait-wrap {
-    width: min(318px, 92vw);
+    width: min(318px, 100%);
     margin: 0 auto;
   }
 
