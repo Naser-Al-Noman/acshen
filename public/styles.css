@@ -592,13 +592,7 @@ body[data-theme="light"] {
 }
 
 .loc-pin {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  display: block;
-  opacity: 0;
-  transform: translate(-50%, -104%) scale(0.75);
-  animation: loc-pin var(--loc-cycle) var(--loc-ease) infinite;
+  display: none;
 }
 
 .loc-pin svg {
@@ -2989,7 +2983,7 @@ a:hover {
   .ai-row, .qa-bar, .bd-ecg, .bd-dot, .hidps-scan, .hidps-pkt, .hidps-shield,
   .ach-ring, .ach-star, .ach-pi, .ach-flame, .ach-nucleus, .ach-e-spin,
   .hero-rule span, .hero-frame-trace, .hero-portrait, .hero-orbit-dot,
-  .loc-scene, .loc-stage, .loc-world, .loc-bd-vector, .loc-pin {
+  .loc-scene, .loc-stage, .loc-world, .loc-bd-vector {
     animation: none;
   }
 
@@ -3003,11 +2997,6 @@ a:hover {
 
   .loc-bd-vector {
     opacity: 1;
-  }
-
-  .loc-pin {
-    opacity: 1;
-    transform: translate(-50%, -104%) scale(1);
   }
 
   .hero-frame-trace {
