@@ -2143,6 +2143,10 @@ a.contact-detail-value:focus-visible {
 }
 
 .achievements li {
+  display: grid;
+  grid-template-columns: 72px minmax(0, 1fr) auto;
+  align-items: start;
+  gap: 14px;
   border-left: 2px solid var(--accent);
   padding: 12px 14px;
   color: var(--muted);
@@ -2153,6 +2157,131 @@ a.contact-detail-value:focus-visible {
   transition: background-color 0.2s ease, border-color 0.2s ease;
 }
 
+.achievement-visual {
+  flex-shrink: 0;
+  width: 72px;
+  height: 72px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: rgba(10, 16, 28, 0.55);
+  overflow: hidden;
+}
+
+:root[data-theme="light"] .achievement-visual {
+  background: rgba(26, 39, 68, 0.06);
+}
+
+.achievement-visual svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.ach-ring {
+  fill: none;
+  stroke: var(--gold);
+  stroke-width: 2;
+  animation: ach-ring 2.6s ease-in-out infinite;
+}
+
+.ach-icon {
+  fill: none;
+  stroke: var(--gold);
+  stroke-width: 2;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+}
+
+.ach-star {
+  fill: var(--gold);
+  stroke: none;
+  transform-origin: 40px 40px;
+  animation: ach-pulse 2.4s ease-in-out infinite;
+}
+
+.ach-icon-dot {
+  fill: none;
+  stroke: var(--gold);
+  stroke-width: 2;
+}
+
+.ach-flame {
+  fill: var(--gold);
+  stroke: none;
+  transform-origin: 40px 54px;
+  animation: ach-flame 0.9s ease-in-out infinite;
+}
+
+.ach-pi {
+  animation: ach-pulse 2.6s ease-in-out infinite;
+  transform-origin: 40px 40px;
+}
+
+.ach-nucleus,
+.ach-electron {
+  fill: var(--gold);
+  stroke: none;
+}
+
+.ach-nucleus {
+  transform-origin: 40px 40px;
+  animation: ach-pulse 2.2s ease-in-out infinite;
+}
+
+.ach-orbit {
+  fill: none;
+  stroke: var(--gold);
+  stroke-width: 2;
+}
+
+.ach-e-spin {
+  transform-origin: 40px 40px;
+  animation: ach-spin 4s linear infinite;
+}
+
+.ach-e-spin-2 {
+  animation-duration: 5s;
+  animation-direction: reverse;
+}
+
+@keyframes ach-ring {
+  0%,
+  100% {
+    opacity: 0.55;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes ach-pulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.06);
+  }
+}
+
+@keyframes ach-flame {
+  0%,
+  100% {
+    transform: scaleY(1);
+    opacity: 0.75;
+  }
+  50% {
+    transform: scaleY(1.2);
+    opacity: 1;
+  }
+}
+
+@keyframes ach-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 .achievements li:hover {
   background: rgba(var(--accent-rgb), 0.1);
 }
@@ -2161,21 +2290,41 @@ a.contact-detail-value:focus-visible {
   color: var(--text);
 }
 
-.achievement-link {
-  color: inherit;
-  text-decoration: none;
-  border-bottom: 1px dotted var(--accent);
-  transition: color 0.2s ease, border-color 0.2s ease;
+.achievement-copy {
+  min-width: 0;
+  padding-top: 2px;
 }
 
-.achievement-link:hover,
-.achievement-link:focus-visible {
+.achievement-copy p {
+  margin: 6px 0 0;
+  color: var(--muted);
+  line-height: 1.6;
+  font-size: 0.9rem;
+}
+
+.achievement-cert {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 2px;
+  padding: 6px 12px;
+  border-radius: var(--radius);
+  border: 1px solid var(--accent);
   color: var(--accent);
-  border-bottom-color: var(--accent);
+  text-decoration: none;
+  font-size: 0.8rem;
+  font-weight: 500;
+  white-space: nowrap;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
 }
 
-.achievement-link strong {
-  color: inherit;
+.achievement-cert:hover,
+.achievement-cert:focus-visible {
+  background: var(--accent);
+  color: var(--button-text);
+  border-color: var(--accent);
+  text-decoration: none;
 }
 
 /* General */
@@ -2268,6 +2417,29 @@ a:hover {
 }
 
 @media (max-width: 640px) {
+  .achievements li {
+    display: grid;
+    grid-template-columns: 72px minmax(0, 1fr);
+    grid-template-areas:
+      "visual copy"
+      "visual cert";
+    align-items: start;
+  }
+
+  .achievement-visual {
+    grid-area: visual;
+  }
+
+  .achievement-copy {
+    grid-area: copy;
+  }
+
+  .achievement-cert {
+    grid-area: cert;
+    justify-self: start;
+    margin-top: 8px;
+  }
+
   body.chat-open {
     position: fixed;
     left: 0;
@@ -2382,7 +2554,8 @@ a:hover {
 @media (prefers-reduced-motion: reduce) {
   .cursor, #typing-text, .typing-dots span,
   .pw-status, .pw-progress, .api-packet, .ai-doc-line, .ai-arrow, .ai-arrow-head,
-  .ai-row, .qa-bar, .bd-ecg, .bd-dot, .hidps-scan, .hidps-pkt, .hidps-shield {
+  .ai-row, .qa-bar, .bd-ecg, .bd-dot, .hidps-scan, .hidps-pkt, .hidps-shield,
+  .ach-ring, .ach-star, .ach-pi, .ach-flame, .ach-nucleus, .ach-e-spin {
     animation: none;
   }
 
