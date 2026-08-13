@@ -332,7 +332,7 @@ body[data-theme="light"] {
   max-width: 100%;
   min-width: 0;
   padding: 18px;
-  margin-top: -18px;
+  margin-top: -8px;
 }
 
 .hero-rule {
