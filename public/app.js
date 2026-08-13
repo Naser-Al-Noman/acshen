@@ -166,6 +166,87 @@ themeToggle?.addEventListener("click", () => {
   }, 300);
 });
 
+const KEYBOARD_OPEN_THRESHOLD = 80;
+let chatScrollLockY = 0;
+let lastKeyboardInset = 0;
+
+function isMobileChatViewport() {
+  return window.matchMedia("(max-width: 640px)").matches;
+}
+
+function getVisualViewportMetrics() {
+  const visualViewport = window.visualViewport;
+  if (!visualViewport) {
+    return { inset: 0, height: window.innerHeight };
+  }
+
+  const inset = Math.max(
+    0,
+    window.innerHeight - visualViewport.height - visualViewport.offsetTop
+  );
+
+  return { inset, height: visualViewport.height };
+}
+
+function lockPageScrollForChat() {
+  if (!isMobileChatViewport() || document.body.classList.contains("chat-open")) {
+    return;
+  }
+
+  chatScrollLockY = window.scrollY;
+  document.body.classList.add("chat-open");
+  document.body.style.top = `-${chatScrollLockY}px`;
+}
+
+function unlockPageScrollForChat() {
+  if (!document.body.classList.contains("chat-open")) {
+    return;
+  }
+
+  document.body.classList.remove("chat-open");
+  document.body.style.top = "";
+  window.scrollTo(0, chatScrollLockY);
+}
+
+function syncChatWithKeyboard() {
+  const root = document.documentElement;
+  const isOpen = chatWidget?.dataset.chatState === "open";
+  const { inset, height } = getVisualViewportMetrics();
+  const keyboardInset = isOpen ? inset : 0;
+
+  root.style.setProperty("--keyboard-inset", `${Math.round(keyboardInset)}px`);
+  root.style.setProperty(
+    "--visual-viewport-height",
+    `${Math.round(isOpen ? height : window.innerHeight)}px`
+  );
+  root.classList.toggle(
+    "keyboard-open",
+    Boolean(isOpen && keyboardInset > KEYBOARD_OPEN_THRESHOLD)
+  );
+
+  const keyboardMoved = Math.abs(keyboardInset - lastKeyboardInset) > 40;
+  lastKeyboardInset = keyboardInset;
+  if (isOpen && chatMessages && keyboardMoved) {
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+  }
+}
+
+function bindChatKeyboardSync() {
+  const visualViewport = window.visualViewport;
+  const syncSoon = () => {
+    window.requestAnimationFrame(syncChatWithKeyboard);
+    window.setTimeout(syncChatWithKeyboard, 50);
+    window.setTimeout(syncChatWithKeyboard, 300);
+  };
+
+  window.addEventListener("resize", syncChatWithKeyboard, { passive: true });
+  visualViewport?.addEventListener("resize", syncChatWithKeyboard);
+  visualViewport?.addEventListener("scroll", syncChatWithKeyboard);
+  chatInput?.addEventListener("focus", syncSoon);
+  chatInput?.addEventListener("blur", syncSoon);
+  syncChatWithKeyboard();
+}
+
 function setChatLauncherVisibility(isVisible) {
   if (!chatLauncher) {
     return;
@@ -197,11 +278,17 @@ function setChatState(isOpen) {
   chatLauncher.setAttribute("aria-expanded", String(isOpen));
 
   if (isOpen) {
+    lockPageScrollForChat();
+    syncChatWithKeyboard();
     chatInput?.focus();
   } else {
+    unlockPageScrollForChat();
+    syncChatWithKeyboard();
     chatLauncher.focus();
   }
 }
+
+bindChatKeyboardSync();
 
 chatToggle?.addEventListener("click", () => {
   const hidden = chatLauncher?.style.display === "none";
