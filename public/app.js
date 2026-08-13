@@ -514,24 +514,7 @@ document.addEventListener("pointerdown", (event) => {
   }
 });
 
-const text = "Computer Science graduate with hands-on Software Quality Assurance experience testing CRM and EMR web applications. Skilled in manual testing, REST API validation, SQL-based database verification, regression testing, and Playwright test automation.";
-const typingText = document.getElementById("typing-text");
-let typingIndex = 0;
-
-function typeWriter() {
-  if (!typingText) {
-    return;
-  }
-
-  if (typingIndex < text.length) {
-    typingText.textContent += text.charAt(typingIndex);
-    typingIndex += 1;
-    setTimeout(typeWriter, 50);
-  }
-}
-
 window.addEventListener("load", () => {
-  typeWriter();
   initTheme();
 
   if (chatWidget) {
