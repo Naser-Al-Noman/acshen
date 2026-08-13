@@ -1579,6 +1579,157 @@ a.contact-detail-value:focus-visible {
   font-size: 0.9rem;
 }
 
+/* Research */
+.research-item {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(220px, 0.9fr);
+  gap: 20px;
+  align-items: center;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 18px;
+  background: transparent;
+  transition: border-color 0.2s ease;
+}
+
+.research-item:hover {
+  border-color: var(--accent);
+}
+
+.research-item .tag {
+  margin-bottom: 12px;
+}
+
+.research-item h3 {
+  margin: 0 0 6px;
+  line-height: 1.35;
+}
+
+.research-item .company {
+  margin: 0 0 10px;
+}
+
+.research-item .tech-stack {
+  margin-bottom: 12px;
+}
+
+.research-copy p:not(.tag):not(.company):not(.tech-stack) {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.65;
+  font-size: 0.95rem;
+}
+
+.research-visual {
+  margin-top: 0;
+}
+
+.hidps-lane {
+  stroke: rgba(142, 154, 171, 0.28);
+  stroke-width: 1.5;
+  stroke-dasharray: 4 4;
+}
+
+.hidps-scan {
+  fill: var(--gold);
+  opacity: 0.35;
+  animation: hidps-scan 2.8s ease-in-out infinite;
+}
+
+.hidps-pkt {
+  fill: var(--gold);
+}
+
+.hidps-pkt-ok {
+  animation: hidps-ok 2.8s ease-in-out infinite;
+}
+
+.hidps-pkt-ok-2 {
+  animation: hidps-ok 2.8s ease-in-out infinite;
+  animation-delay: 0.9s;
+}
+
+.hidps-pkt-block {
+  fill: rgba(142, 154, 171, 0.75);
+  animation: hidps-block 2.8s ease-in-out infinite;
+  animation-delay: 0.35s;
+}
+
+.hidps-host {
+  stroke: var(--gold);
+}
+
+.hidps-shield {
+  fill: rgba(212, 178, 74, 0.18);
+  stroke: var(--gold);
+  stroke-width: 2;
+  animation: hidps-shield 2.8s ease-in-out infinite;
+}
+
+@keyframes hidps-scan {
+  0% {
+    transform: translateX(0);
+    opacity: 0.15;
+  }
+  45% {
+    opacity: 0.55;
+  }
+  100% {
+    transform: translateX(88px);
+    opacity: 0.15;
+  }
+}
+
+@keyframes hidps-ok {
+  0% {
+    transform: translateX(0);
+    opacity: 0;
+  }
+  12% {
+    opacity: 1;
+  }
+  78% {
+    transform: translateX(178px);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(188px);
+    opacity: 0;
+  }
+}
+
+@keyframes hidps-block {
+  0% {
+    transform: translateX(0) scale(1);
+    opacity: 0;
+  }
+  12% {
+    opacity: 1;
+  }
+  48% {
+    transform: translateX(92px) scale(1);
+    opacity: 1;
+  }
+  62% {
+    transform: translateX(92px) scale(0.2);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(92px) scale(0.2);
+    opacity: 0;
+  }
+}
+
+@keyframes hidps-shield {
+  0%,
+  100% {
+    opacity: 0.7;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
 /* Projects */
 .projects {
   display: grid;
@@ -2060,6 +2211,10 @@ a:hover {
 }
 
 @media (max-width: 760px) {
+  .research-item {
+    grid-template-columns: 1fr;
+  }
+
   .hero-body {
     grid-template-columns: 1fr;
     gap: 24px;
@@ -2227,7 +2382,7 @@ a:hover {
 @media (prefers-reduced-motion: reduce) {
   .cursor, #typing-text, .typing-dots span,
   .pw-status, .pw-progress, .api-packet, .ai-doc-line, .ai-arrow, .ai-arrow-head,
-  .ai-row, .qa-bar, .bd-ecg, .bd-dot {
+  .ai-row, .qa-bar, .bd-ecg, .bd-dot, .hidps-scan, .hidps-pkt, .hidps-shield {
     animation: none;
   }
 

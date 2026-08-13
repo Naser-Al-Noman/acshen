@@ -64,6 +64,13 @@
       "metadata": { "keywords": ["education", "BRAC University", "CSE", "computer science", "engineering", "bachelor", "degree", "CGPA", "HSC", "Mirpur Cantonment"] }
     },
     {
+      "id": "research-avantgarde",
+      "title": "Research – Avantgarde HIDPS",
+      "section": "research",
+      "content": "During his undergraduate studies at BRAC University, Naser Al Noman worked on research titled “Avantgarde: A Machine Learning Based Hybrid Host-Based Intrusion Detection and Prevention System.” The paper is currently under review. Avantgarde is a HIDPS framework that counters cyber threats by leveraging AI, automation, zero-trust architecture, and open-source tools for enhanced threat detection, prevention, and response. The work discusses the impacts and constraints of the chosen technologies, explains the Avantgarde design process, and evaluates the framework on the BCCC-CIC-IDS2017 dataset and live network data. Performance analysis indicates improved threat-detection accuracy, access control, fewer false positives, and greater network resilience. Abstract: In the age of the Internet, cyber threats are increasing at an exponential rate, targeting individuals and institutions of all types. The need for a proper cybersecurity infrastructure integrated with the latest innovations such as artificial intelligence, zero-trust architecture, and automation has become paramount, especially when malicious actors use AI to their advantage. This paper presents a HIDPS framework called Avantgarde to counter cyber threats by leveraging AI, automation, zero-trust architecture, and open-source tools to create integrated systems with enhanced threat detection, prevention, and response capabilities. The research assesses the effectiveness of this approach and its potential to meet online security requirements. It discusses the impacts and constraints of the chosen technologies, reviews the Avantgarde design process, and evaluates Avantgarde on the BCCC-CIC-IDS2017 dataset and live network data. Analysis on performance indicators shows that Avantgarde’s framework improves overall threat-detection accuracy, access control, reduction of false positives, and network resilience, highlighting its potential as an adaptive framework capable of addressing modern security challenges in an ever-evolving digital landscape.",
+      "metadata": { "keywords": ["research", "Avantgarde", "HIDPS", "HIDS", "intrusion detection", "intrusion prevention", "machine learning", "cybersecurity", "zero-trust", "AI", "BCCC-CIC-IDS2017", "under review", "undergraduate", "BRAC University", "paper", "thesis"] }
+    },
+    {
       "id": "achievements",
       "title": "Achievements",
       "section": "achievements",
