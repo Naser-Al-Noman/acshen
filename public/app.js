@@ -120,8 +120,8 @@ function updateChatLauncherIcon(theme) {
     return;
   }
 
-  const lightSrc = chatIcon.dataset.light || 'logos/chat-intelligence-svgrepo-com-dark.svg';
-  const darkSrc = chatIcon.dataset.dark || 'logos/chat-intelligence-svgrepo-com-white.svg';
+  const lightSrc = chatIcon.dataset.light || 'logos/chat-intelligence-svgrepo-com-white.svg';
+  const darkSrc = chatIcon.dataset.dark || 'logos/chat-intelligence-svgrepo-com-dark.svg';
   chatIcon.src = theme === 'light' ? lightSrc : darkSrc;
 }
 
