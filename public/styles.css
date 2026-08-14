@@ -1,4 +1,4 @@
-:root {
+﻿:root {
   --bg: #0c1220;
   --surface: #151d2e;
   --text: #f3f6fb;
@@ -387,30 +387,6 @@ body[data-theme="light"] {
   border-width: 0 1.5px 1.5px 0;
 }
 
-.hero-orbit-dot {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 8px;
-  height: 8px;
-  margin: -4px 0 0 -4px;
-  border-radius: 50%;
-  background: var(--gold);
-  box-shadow: 0 0 10px rgba(var(--accent-rgb), 0.4);
-  pointer-events: none;
-  offset-path: inset(0 round 4px);
-  offset-rotate: 0deg;
-  animation: hero-orbit 14s linear infinite;
-}
-
-.hero-orbit-dot-2 {
-  width: 5px;
-  height: 5px;
-  margin: -2.5px 0 0 -2.5px;
-  opacity: 0.6;
-  animation-delay: -7s;
-}
-
 :root[data-theme="light"] .hero-portrait {
   box-shadow: var(--shadow);
 }
@@ -443,12 +419,6 @@ body[data-theme="light"] {
   }
   50% {
     box-shadow: 4px 4px 0 rgba(var(--accent-rgb), 0.42);
-  }
-}
-
-@keyframes hero-orbit {
-  to {
-    offset-distance: 100%;
   }
 }
 
@@ -2935,7 +2905,7 @@ a:hover {
   .pw-status, .pw-progress, .api-packet, .ai-doc-line, .ai-arrow, .ai-arrow-head,
   .ai-row, .qa-bar, .bd-ecg, .bd-dot, .hidps-scan, .hidps-pkt, .hidps-shield,
   .ach-ring, .ach-star, .ach-pi, .ach-flame, .ach-nucleus, .ach-e-spin,
-  .hero-rule span, .hero-frame-trace, .hero-portrait, .hero-orbit-dot,
+  .hero-rule span, .hero-frame-trace, .hero-portrait,
   .loc-scene, .loc-stage, .loc-world, .loc-bd-vector {
     animation: none;
   }
@@ -2964,10 +2934,6 @@ a:hover {
   .loc-stage-world,
   .loc-stage-bd {
     opacity: 0;
-  }
-
-  .hero-orbit-dot {
-    display: none;
   }
 
   .pw-progress,

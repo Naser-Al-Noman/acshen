@@ -591,3 +591,17 @@ if (navSections.length > 0) {
     { passive: true }
   );
 }
+(function initWinClock() {
+  const clock = document.getElementById("win-clock");
+  if (!clock) return;
+
+  function tick() {
+    clock.textContent = new Date().toLocaleTimeString([], {
+      hour: "numeric",
+      minute: "2-digit",
+    });
+  }
+
+  tick();
+  window.setInterval(tick, 15000);
+})();
