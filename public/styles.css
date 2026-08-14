@@ -2498,167 +2498,59 @@ a.contact-detail-value:focus-visible {
   padding: 0;
   margin: 0;
   display: grid;
-  gap: 14px;
+  gap: 0;
+  border-top: 1px solid var(--line);
 }
 
 .achievements li {
   display: grid;
-  grid-template-columns: 72px minmax(0, 1fr) auto;
+  grid-template-columns: 148px minmax(0, 1fr) auto;
+  gap: 16px 24px;
   align-items: start;
-  gap: 14px;
-  border-left: 2px solid var(--accent);
-  padding: 12px 14px;
+  padding: 18px 0;
+  border-bottom: 1px solid var(--line);
   color: var(--muted);
-  line-height: 1.6;
-  font-size: 0.9rem;
-  border-radius: 0 var(--radius) var(--radius) 0;
-  background: rgba(var(--accent-rgb), 0.06);
-  transition: background-color 0.2s ease, border-color 0.2s ease;
+  line-height: 1.55;
+  font-size: 0.92rem;
+  background: transparent;
+  transition: none;
 }
 
-.achievement-visual {
-  flex-shrink: 0;
-  width: 72px;
-  height: 72px;
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  background: rgba(10, 16, 28, 0.55);
-  overflow: hidden;
+.achievement-meta {
+  margin: 0;
+  padding-top: 3px;
+  font-family: "Courier Prime", monospace;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--gold);
+  line-height: 1.4;
 }
 
-:root[data-theme="light"] .achievement-visual {
-  background: rgba(26, 39, 68, 0.06);
-}
-
-.achievement-visual svg {
-  display: block;
-  width: 100%;
-  height: 100%;
-}
-
-.ach-ring {
-  fill: none;
-  stroke: var(--gold);
-  stroke-width: 2;
-  animation: ach-ring 2.6s ease-in-out infinite;
-}
-
-.ach-icon {
-  fill: none;
-  stroke: var(--gold);
-  stroke-width: 2;
-  stroke-linejoin: round;
-  stroke-linecap: round;
-}
-
-.ach-star {
-  fill: var(--gold);
-  stroke: none;
-  transform-origin: 40px 40px;
-  animation: ach-pulse 2.4s ease-in-out infinite;
-}
-
-.ach-icon-dot {
-  fill: none;
-  stroke: var(--gold);
-  stroke-width: 2;
-}
-
-.ach-flame {
-  fill: var(--gold);
-  stroke: none;
-  transform-origin: 40px 54px;
-  animation: ach-flame 0.9s ease-in-out infinite;
-}
-
-.ach-pi {
-  animation: ach-pulse 2.6s ease-in-out infinite;
-  transform-origin: 40px 40px;
-}
-
-.ach-nucleus,
-.ach-electron {
-  fill: var(--gold);
-  stroke: none;
-}
-
-.ach-nucleus {
-  transform-origin: 40px 40px;
-  animation: ach-pulse 2.2s ease-in-out infinite;
-}
-
-.ach-orbit {
-  fill: none;
-  stroke: var(--gold);
-  stroke-width: 2;
-}
-
-.ach-e-spin {
-  transform-origin: 40px 40px;
-  animation: ach-spin 4s linear infinite;
-}
-
-.ach-e-spin-2 {
-  animation-duration: 5s;
-  animation-direction: reverse;
-}
-
-@keyframes ach-ring {
-  0%,
-  100% {
-    opacity: 0.55;
-  }
-  50% {
-    opacity: 1;
-  }
-}
-
-@keyframes ach-pulse {
-  0%,
-  100% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.06);
-  }
-}
-
-@keyframes ach-flame {
-  0%,
-  100% {
-    transform: scaleY(1);
-    opacity: 0.75;
-  }
-  50% {
-    transform: scaleY(1.2);
-    opacity: 1;
-  }
-}
-
-@keyframes ach-spin {
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-.achievements li:hover {
-  background: rgba(var(--accent-rgb), 0.1);
-}
-
-.achievements strong {
-  color: var(--text);
-}
-
-.achievement-copy {
+.achievement-body {
   min-width: 0;
-  padding-top: 2px;
 }
 
-.achievement-copy p {
-  margin: 6px 0 0;
+.achievement-body h3 {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.35;
+}
+
+.achievement-org {
+  margin: 4px 0 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.achievement-body > p:not(.achievement-org) {
+  margin: 8px 0 0;
   color: var(--muted);
   line-height: 1.6;
   font-size: 0.9rem;
+  max-width: 62ch;
 }
 
 .achievement-cert {
@@ -2666,14 +2558,16 @@ a.contact-detail-value:focus-visible {
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  margin-top: 2px;
+  margin-top: 0;
   padding: 6px 12px;
   border-radius: var(--radius-pill);
   border: 1px solid var(--accent);
   color: var(--accent);
   text-decoration: none;
+  font-family: "Source Sans 3", sans-serif;
   font-size: 0.8rem;
   font-weight: 500;
+  letter-spacing: 0;
   white-space: nowrap;
   transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
 }
@@ -2779,26 +2673,18 @@ a:hover {
 
 @media (max-width: 640px) {
   .achievements li {
-    display: grid;
-    grid-template-columns: 72px minmax(0, 1fr);
-    grid-template-areas:
-      "visual copy"
-      "visual cert";
-    align-items: start;
+    grid-template-columns: 1fr;
+    gap: 6px;
+    padding: 16px 0;
   }
 
-  .achievement-visual {
-    grid-area: visual;
-  }
-
-  .achievement-copy {
-    grid-area: copy;
+  .achievement-meta {
+    padding-top: 0;
   }
 
   .achievement-cert {
-    grid-area: cert;
-    justify-self: start;
-    margin-top: 8px;
+    justify-content: flex-start;
+    margin-top: 6px;
   }
 
   body.chat-open {
@@ -2904,7 +2790,6 @@ a:hover {
   .typing-dots span,
   .pw-status, .pw-progress, .api-packet, .ai-doc-line, .ai-arrow, .ai-arrow-head,
   .ai-row, .qa-bar, .bd-ecg, .bd-dot, .hidps-scan, .hidps-pkt, .hidps-shield,
-  .ach-ring, .ach-star, .ach-pi, .ach-flame, .ach-nucleus, .ach-e-spin,
   .hero-rule span, .hero-frame-trace, .hero-portrait,
   .loc-scene, .loc-stage, .loc-world, .loc-bd-vector {
     animation: none;
