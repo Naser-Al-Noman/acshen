@@ -11,8 +11,8 @@
       "id": "contact",
       "title": "Contact Information",
       "section": "contact",
-      "content": "Naser Al Noman can be contacted by email at nasernoman277@gmail.com or by phone at +880 1940957688. His LinkedIn profile is at https://www.linkedin.com/in/naser-al-noman and his GitHub is at https://github.com/Naser-Al-Noman. His portfolio website is at https://naseralnoman.vercel.app/. He is based in Mirpur-2, Dhaka-1216, Bangladesh.",
-      "metadata": { "keywords": ["email", "phone", "linkedin", "github", "portfolio", "contact", "reach", "vercel"] }
+      "content": "Naser Al Noman can be contacted by email at nasernoman277@gmail.com. His LinkedIn profile is at https://www.linkedin.com/in/naser-al-noman and his GitHub is at https://github.com/Naser-Al-Noman. His portfolio website is at https://naseralnoman.vercel.app/. He is based in Mirpur-2, Dhaka-1216, Bangladesh.",
+      "metadata": { "keywords": ["email", "linkedin", "github", "portfolio", "contact", "reach", "vercel", "location", "dhaka"] }
     },
     {
       "id": "experience-sj-innovation-trainee",

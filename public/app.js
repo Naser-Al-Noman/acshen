@@ -13,60 +13,91 @@ const contactError = document.getElementById("contact-error");
 function showContactStatus(type, message) {
   if (!contactSuccess || !contactError) return;
   if (type === 'success') {
-    contactError.style.display = 'none';
+    contactError.classList.add('hidden');
     contactSuccess.textContent = message;
-    contactSuccess.style.display = 'block';
+    contactSuccess.classList.remove('hidden');
   } else {
-    contactSuccess.style.display = 'none';
+    contactSuccess.classList.add('hidden');
     contactError.textContent = message;
-    contactError.style.display = 'block';
+    contactError.classList.remove('hidden');
   }
 }
 
 if (contactFormElement) {
+  const contactName = document.getElementById("name");
+  const contactEmail = document.getElementById("email");
   const contactMessage = document.getElementById("message");
+  const contactNameError = document.getElementById("contact-name-error");
+  const contactEmailError = document.getElementById("contact-email-error");
   const contactMessageError = document.getElementById("contact-message-error");
 
-  function clearContactFieldError() {
-    contactMessage?.classList.remove("is-invalid");
-    if (contactMessageError) {
-      contactMessageError.hidden = true;
+  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+  function clearContactFieldError(field) {
+    field?.classList.remove("is-invalid");
+    const errorId = field?.getAttribute("aria-describedby");
+    if (errorId) {
+      const errorEl = document.getElementById(errorId);
+      if (errorEl) {
+        errorEl.hidden = true;
+      }
     }
   }
 
-  function showContactFieldError() {
-    contactMessage?.classList.add("is-invalid");
-    if (contactMessageError) {
-      contactMessageError.hidden = false;
+  function showContactFieldError(field) {
+    field?.classList.add("is-invalid");
+    const errorId = field?.getAttribute("aria-describedby");
+    if (errorId) {
+      const errorEl = document.getElementById(errorId);
+      if (errorEl) {
+        errorEl.hidden = false;
+      }
     }
-    contactMessage?.focus();
+    field?.focus();
   }
 
-  contactMessage?.addEventListener("input", clearContactFieldError);
+  contactName?.addEventListener("input", () => clearContactFieldError(contactName));
+  contactEmail?.addEventListener("input", () => clearContactFieldError(contactEmail));
+  contactMessage?.addEventListener("input", () => clearContactFieldError(contactMessage));
 
   document.addEventListener("pointerdown", (event) => {
-    if (!contactMessage?.classList.contains("is-invalid")) {
-      return;
-    }
+    [contactName, contactEmail, contactMessage].forEach((field) => {
+      if (!field?.classList.contains("is-invalid")) {
+        return;
+      }
 
-    const wrap = contactMessage.closest(".contact-field-wrap");
-    if (wrap && !wrap.contains(event.target)) {
-      clearContactFieldError();
-    }
+      const wrap = field.closest(".contact-field-wrap");
+      if (wrap && !wrap.contains(event.target)) {
+        clearContactFieldError(field);
+      }
+    });
   });
 
   contactFormElement.addEventListener("submit", async (event) => {
     event.preventDefault();
-    if (contactSuccess) contactSuccess.style.display = "none";
-    if (contactError) contactError.style.display = "none";
+    contactSuccess?.classList.add("hidden");
+    contactError?.classList.add("hidden");
 
+    const name = contactName?.value.trim() || "";
+    const email = contactEmail?.value.trim() || "";
     const message = contactMessage?.value.trim() || "";
-    if (!message) {
-      showContactFieldError();
+
+    [contactName, contactEmail, contactMessage].forEach(clearContactFieldError);
+
+    if (!name) {
+      showContactFieldError(contactName);
       return;
     }
 
-    clearContactFieldError();
+    if (!email || !emailPattern.test(email)) {
+      showContactFieldError(contactEmail);
+      return;
+    }
+
+    if (!message) {
+      showContactFieldError(contactMessage);
+      return;
+    }
 
     const submitButton = contactFormElement.querySelector(".send-button");
     if (submitButton) {

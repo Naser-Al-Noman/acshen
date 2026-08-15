@@ -507,20 +507,6 @@ body[data-theme="light"] {
   animation: loc-bd-fade var(--loc-cycle) var(--loc-ease) infinite;
 }
 
-.bd-shape path {
-  fill: var(--gold);
-}
-
-.bd-dhaka-dot {
-  fill: #050a14;
-  opacity: 0.55;
-}
-
-:root[data-theme="light"] .bd-dhaka-dot {
-  fill: #ffffff;
-  opacity: 0.75;
-}
-
 .loc-hud {
   position: absolute;
   inset: 0;
@@ -1233,7 +1219,8 @@ a.contact-detail-value:focus-visible {
   position: relative;
 }
 
-.contact-field-wrap:has(textarea.is-invalid) {
+.contact-field-wrap:has(textarea.is-invalid),
+.contact-field-wrap:has(input.is-invalid) {
   padding-bottom: 44px;
 }
 
@@ -1290,6 +1277,32 @@ a.contact-detail-value:focus-visible {
 
 :root[data-theme="light"] .field-error {
   box-shadow: 0 8px 20px rgba(15, 23, 42, 0.12), 0 0 0 1px rgba(var(--accent-rgb), 0.16);
+}
+
+.form-banner {
+  margin: 0 0 16px;
+  padding: 10px 12px;
+  border-radius: var(--radius);
+  border: 1px solid var(--line);
+  background: var(--surface);
+  color: var(--text);
+  font-size: 0.88rem;
+  line-height: 1.45;
+  box-shadow: var(--shadow);
+}
+
+.form-banner-success {
+  border-color: rgba(var(--accent-rgb), 0.35);
+  background: rgba(var(--accent-rgb), 0.08);
+}
+
+.form-banner-error {
+  border-color: rgba(var(--accent-rgb), 0.45);
+  background: rgba(var(--accent-rgb), 0.1);
+}
+
+.hidden {
+  display: none !important;
 }
 
 .send-button {
