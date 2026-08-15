@@ -2613,6 +2613,7 @@ a.contact-detail-value:focus-visible {
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
+  width: max-content;
   margin-top: 0;
   padding: 6px 12px;
   border-radius: var(--radius-pill);
@@ -2739,8 +2740,10 @@ a:hover {
   }
 
   .achievement-cert {
-    justify-content: flex-start;
-    margin-top: 6px;
+    justify-self: start;
+    width: auto;
+    margin-top: 8px;
+    padding: 6px 12px;
   }
 
   body.chat-open {
