@@ -605,3 +605,37 @@ if (navSections.length > 0) {
   tick();
   window.setInterval(tick, 15000);
 })();
+
+(() => {
+  const keyClickSelector = [
+    ".button",
+    ".social-links a",
+    ".contact-socials a",
+    ".project-links a",
+    ".achievement-cert",
+    ".chat-launcher",
+    ".chat-form button",
+    ".site-nav-cta",
+    ".nav-menu-toggle",
+    ".download-button",
+    ".skill-chip",
+  ].join(", ");
+
+  document.addEventListener("pointerdown", (event) => {
+    const target = event.target.closest(keyClickSelector);
+    if (!target || target.disabled) {
+      return;
+    }
+
+    target.classList.add("is-pressed");
+
+    const release = () => {
+      target.classList.remove("is-pressed");
+      window.removeEventListener("pointerup", release);
+      window.removeEventListener("pointercancel", release);
+    };
+
+    window.addEventListener("pointerup", release);
+    window.addEventListener("pointercancel", release);
+  });
+})();

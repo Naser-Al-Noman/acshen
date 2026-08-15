@@ -212,6 +212,8 @@ body[data-theme="light"] {
   color: var(--button-text);
   background: var(--accent);
   border: 1px solid transparent;
+  box-shadow: var(--shadow);
+  transition: transform 0.08s ease, box-shadow 0.08s ease, background-color 0.2s ease, color 0.2s ease;
 }
 
 .site-nav-links .site-nav-cta:hover,
@@ -234,6 +236,8 @@ body[data-theme="light"] {
   background: rgba(255, 255, 255, 0.06);
   color: var(--text);
   cursor: pointer;
+  box-shadow: var(--shadow);
+  transition: transform 0.08s ease, box-shadow 0.08s ease;
 }
 
 :root[data-theme="light"] .nav-menu-toggle {
@@ -936,13 +940,15 @@ body[data-theme="light"] {
   text-decoration: none;
   font-size: 0.85rem;
   font-weight: 500;
-  transition: all 0.3s ease;
+  box-shadow: var(--shadow);
+  transition: transform 0.08s ease, box-shadow 0.08s ease, background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
 }
 
 .social-links a:hover {
   background: var(--accent);
   color: var(--button-text);
   border-color: var(--accent);
+  box-shadow: var(--shadow-hover);
 }
 
 .hero-actions {
@@ -966,7 +972,8 @@ body[data-theme="light"] {
   text-decoration: none;
   font-family: "Source Sans 3", sans-serif;
   font-weight: 700;
-  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
+  transition: transform 0.08s ease, box-shadow 0.08s ease, background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
 }
 
 .button-primary {
@@ -980,6 +987,50 @@ body[data-theme="light"] {
 .button-primary:focus-visible {
   filter: none;
   box-shadow: var(--shadow-hover);
+}
+
+.button,
+.social-links a,
+.contact-socials a,
+.project-links a,
+.achievement-cert,
+.chat-launcher,
+.chat-form button,
+.site-nav-links .site-nav-cta,
+.nav-menu-toggle,
+.download-button,
+.skill-chip {
+  transform: translate(0, 0);
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+
+.button:active,
+.button.is-pressed,
+.social-links a:active,
+.social-links a.is-pressed,
+.contact-socials a:active,
+.contact-socials a.is-pressed,
+.project-links a:active,
+.project-links a.is-pressed,
+.achievement-cert:active,
+.achievement-cert.is-pressed,
+.chat-launcher:active,
+.chat-launcher.is-pressed,
+.chat-form button:active:not(:disabled),
+.chat-form button.is-pressed:not(:disabled),
+.site-nav-links .site-nav-cta:active,
+.site-nav-links .site-nav-cta.is-pressed,
+.nav-menu-toggle:active,
+.nav-menu-toggle.is-pressed,
+.download-button:active,
+.download-button.is-pressed,
+.hero-actions .button:active,
+.hero-actions .button.is-pressed,
+.skill-chip:active,
+.skill-chip.is-pressed {
+  transform: translate(3px, 3px);
+  box-shadow: 0 0 0 transparent;
 }
 
 .sr-only {
@@ -1379,7 +1430,7 @@ a.contact-detail-value:focus-visible {
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  transition: transform 0.08s ease, border-color 0.2s ease, box-shadow 0.08s ease;
   overflow: visible;
   animation: none;
 }
@@ -1775,6 +1826,7 @@ a.contact-detail-value:focus-visible {
   font-weight: 700;
   cursor: pointer;
   box-shadow: var(--shadow);
+  transition: transform 0.08s ease, box-shadow 0.08s ease;
 }
 
 .chat-form button:hover {
@@ -1847,14 +1899,16 @@ a.contact-detail-value:focus-visible {
   color: var(--text);
   font-size: 0.88rem;
   line-height: 1.2;
-  cursor: default;
-  transition: transform 0.2s ease, border-color 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
+  box-shadow: var(--shadow);
+  user-select: none;
+  transition: transform 0.08s ease, box-shadow 0.08s ease, border-color 0.2s ease, background-color 0.2s ease;
 }
 
 .skill-chip:hover {
   border-color: var(--accent);
   background: rgba(var(--accent-rgb), 0.14);
-  box-shadow: var(--shadow);
+  box-shadow: var(--shadow-hover);
 }
 
 .skill-chip:hover img {
@@ -2483,7 +2537,8 @@ a.contact-detail-value:focus-visible {
   text-decoration: none;
   font-size: 0.8rem;
   font-weight: 500;
-  transition: all 0.3s ease;
+  box-shadow: var(--shadow);
+  transition: transform 0.08s ease, box-shadow 0.08s ease, background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
 }
 
 .project-links a:hover {
@@ -2569,7 +2624,8 @@ a.contact-detail-value:focus-visible {
   font-weight: 500;
   letter-spacing: 0;
   white-space: nowrap;
-  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+  box-shadow: var(--shadow);
+  transition: transform 0.08s ease, box-shadow 0.08s ease, background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
 }
 
 .achievement-cert:hover,
@@ -2793,6 +2849,33 @@ a:hover {
   .hero-rule span, .hero-frame-trace, .hero-portrait,
   .loc-scene, .loc-stage, .loc-world, .loc-bd-vector {
     animation: none;
+  }
+
+  .button:active,
+  .button.is-pressed,
+  .social-links a:active,
+  .social-links a.is-pressed,
+  .contact-socials a:active,
+  .contact-socials a.is-pressed,
+  .project-links a:active,
+  .project-links a.is-pressed,
+  .achievement-cert:active,
+  .achievement-cert.is-pressed,
+  .chat-launcher:active,
+  .chat-launcher.is-pressed,
+  .chat-form button:active:not(:disabled),
+  .chat-form button.is-pressed:not(:disabled),
+  .site-nav-links .site-nav-cta:active,
+  .site-nav-links .site-nav-cta.is-pressed,
+  .nav-menu-toggle:active,
+  .nav-menu-toggle.is-pressed,
+  .download-button:active,
+  .download-button.is-pressed,
+  .hero-actions .button:active,
+  .hero-actions .button.is-pressed,
+  .skill-chip:active,
+  .skill-chip.is-pressed {
+    transform: none;
   }
 
   .loc-scene {
