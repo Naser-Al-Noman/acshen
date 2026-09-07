@@ -4,8 +4,8 @@
       "id": "profile",
       "title": "Profile & Summary",
       "section": "about",
-      "content": "Naser Al Noman is a Computer Science graduate with hands-on Software Quality Assurance experience testing CRM and EMR web applications. He is skilled in manual testing, REST API validation, SQL-based database verification, regression testing, and Playwright test automation. He has experience collaborating with cross-functional teams in Agile environments to deliver high-quality software through frequent release cycles and continuous process improvement.",
-      "metadata": { "keywords": ["profile", "summary", "QA engineer", "CRM", "EMR", "Playwright", "REST API testing", "SQL", "Agile", "release cycles", "about", "computer science"] }
+      "content": "Naser Al Noman is a Computer Science graduate and Software Quality Assurance Engineer currently working full-time at Nexbild Technologies Bangladesh Ltd. (since September 2026). He has hands-on Software Quality Assurance experience testing CRM and EMR web applications. He is skilled in manual testing, REST API validation, SQL-based database verification, regression testing, and Playwright test automation. He has experience collaborating with cross-functional teams in Agile environments to deliver high-quality software through frequent release cycles and continuous process improvement.",
+      "metadata": { "keywords": ["profile", "summary", "QA engineer", "Nexbild Technologies Bangladesh Ltd.", "CRM", "EMR", "Playwright", "REST API testing", "SQL", "Agile", "release cycles", "about", "computer science", "full-time"] }
     },
     {
       "id": "contact",
@@ -13,6 +13,13 @@
       "section": "contact",
       "content": "Naser Al Noman can be contacted by email at nasernoman277@gmail.com. His LinkedIn profile is at https://www.linkedin.com/in/naser-al-noman and his GitHub is at https://github.com/Naser-Al-Noman. His portfolio website is at https://naseralnoman.vercel.app/. He is based in Mirpur-2, Dhaka-1216, Bangladesh.",
       "metadata": { "keywords": ["email", "linkedin", "github", "portfolio", "contact", "reach", "vercel", "location", "dhaka"] }
+    },
+    {
+      "id": "experience-nexbild-technologies",
+      "title": "Nexbild Technologies Bangladesh Ltd. – Software Quality Assurance Engineer (Full-Time)",
+      "section": "experience",
+      "content": "Naser currently works as a Software Quality Assurance Engineer in a full-time role at Nexbild Technologies Bangladesh Ltd., starting September 2026, based in Dhaka, Bangladesh. He ensures software quality through functional, regression, integration, and API testing across application features. He creates and executes comprehensive test cases covering positive, negative, edge-case, and end-to-end scenarios. He identifies, documents, and tracks defects while collaborating with developers to ensure timely resolution. He performs API validation and data verification to ensure reliable backend and frontend integration. He supports continuous improvement of QA processes, test coverage, documentation, and release quality.",
+      "metadata": { "keywords": ["Nexbild Technologies Bangladesh Ltd.", "Nexbild", "full-time", "QA Engineer", "Software Quality Assurance", "current role", "September 2026", "functional testing", "regression", "integration testing", "API testing", "test cases", "defect tracking", "API validation", "data verification", "QA processes", "release quality"] }
     },
     {
       "id": "experience-sj-innovation-trainee",
