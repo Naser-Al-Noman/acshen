@@ -46,6 +46,7 @@ html {
   scrollbar-width: thin;
   scrollbar-color: rgba(var(--accent-rgb), 0.45) transparent;
   scroll-padding-top: 64px;
+  scroll-behavior: smooth;
 }
 
 *::-webkit-scrollbar {
@@ -95,7 +96,6 @@ body {
   background: var(--bg);
   /* clip avoids creating a scroll container (unlike hidden), so sticky nav works */
   overflow-x: clip;
-  scroll-behavior: smooth;
 }
 
 :root[data-theme="light"] body,
@@ -2865,6 +2865,10 @@ a:hover {
 
 /* Accessibility: Reduce Motion */
 @media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
   .typing-dots span,
   .pw-status, .pw-progress, .api-packet, .ai-doc-line, .ai-arrow, .ai-arrow-head,
   .ai-row, .qa-bar, .bd-ecg, .bd-dot, .hidps-scan, .hidps-pkt, .hidps-shield,
