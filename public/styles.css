@@ -451,7 +451,7 @@ body[data-theme="light"] {
 }
 
 .loc-viewport {
-  --loc-cycle: 24s;
+  --loc-cycle: 16s;
   --loc-ease: cubic-bezier(0.45, 0, 0.3, 1);
   /* Dhaka's position inside the world map, and the zoom that fills the frame */
   --loc-x: 73.822%;
@@ -571,17 +571,17 @@ body[data-theme="light"] {
 
 @keyframes loc-zoom {
   0%,
-  7% {
+  10% {
     transform: translate(0, 0) scale(1);
   }
-  26% {
+  39% {
     transform: translate(calc(50% - 64.29% * 2.4), calc(50% - 46.54% * 2.4)) scale(2.4);
   }
-  42%,
-  54% {
+  62%,
+  80% {
     transform: translate(calc(50% - var(--loc-x) * 23.3), calc(50% - var(--loc-y) * 23.3)) scale(23.3);
   }
-  62%,
+  92%,
   100% {
     transform: translate(0, 0) scale(1);
   }
@@ -589,16 +589,16 @@ body[data-theme="light"] {
 
 @keyframes loc-world-fade {
   0%,
-  30% {
+  45% {
     opacity: 1;
     filter: blur(0);
   }
-  42%,
-  52% {
+  62%,
+  77% {
     opacity: 0;
     filter: blur(2px);
   }
-  62%,
+  92%,
   100% {
     opacity: 1;
     filter: blur(0);
@@ -607,14 +607,14 @@ body[data-theme="light"] {
 
 @keyframes loc-bd-fade {
   0%,
-  26% {
+  39% {
     opacity: 0;
   }
-  38%,
-  54% {
+  56%,
+  80% {
     opacity: 1;
   }
-  62%,
+  92%,
   100% {
     opacity: 0;
   }
@@ -622,16 +622,16 @@ body[data-theme="light"] {
 
 @keyframes loc-pin {
   0%,
-  64% {
+  93% {
     opacity: 0;
     transform: translate(-50%, -128%) scale(0.6);
   }
-  72%,
-  84% {
+  95%,
+  97% {
     opacity: 1;
     transform: translate(-50%, -104%) scale(1);
   }
-  92%,
+  99%,
   100% {
     opacity: 0;
     transform: translate(-50%, -104%) scale(1);
@@ -640,14 +640,14 @@ body[data-theme="light"] {
 
 @keyframes loc-stage-world {
   0%,
-  16% {
+  24% {
     opacity: 1;
   }
-  24%,
-  58% {
+  36%,
+  86% {
     opacity: 0;
   }
-  64%,
+  95%,
   100% {
     opacity: 1;
   }
@@ -655,14 +655,14 @@ body[data-theme="light"] {
 
 @keyframes loc-stage-bd {
   0%,
-  30% {
+  45% {
     opacity: 0;
   }
-  38%,
-  54% {
+  56%,
+  80% {
     opacity: 1;
   }
-  60%,
+  89%,
   100% {
     opacity: 0;
   }
