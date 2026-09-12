@@ -41,7 +41,8 @@
 
 html {
   max-width: 100%;
-  overflow-x: hidden;
+  /* clip avoids creating a scroll container (unlike hidden), so sticky nav works */
+  overflow-x: clip;
   scrollbar-width: thin;
   scrollbar-color: rgba(var(--accent-rgb), 0.45) transparent;
   scroll-padding-top: 64px;
@@ -92,7 +93,8 @@ body {
   font-family: "Source Sans 3", sans-serif;
   color: var(--text);
   background: var(--bg);
-  overflow-x: hidden;
+  /* clip avoids creating a scroll container (unlike hidden), so sticky nav works */
+  overflow-x: clip;
   scroll-behavior: smooth;
 }
 
@@ -683,6 +685,9 @@ body[data-theme="light"] {
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
+  box-sizing: border-box;
+  min-height: 44px;
+  height: 44px;
   padding: 10px 16px;
   border-radius: var(--radius-pill);
   border: 1px solid rgba(255, 255, 255, 0.18);
@@ -752,14 +757,15 @@ body[data-theme="light"] {
 }
 
 .chat-toggle {
-  min-width: 48px;
-  padding: 10px 12px;
+  min-width: 44px;
+  width: 44px;
+  padding: 0;
   position: relative;
 }
 
 .chat-toggle .bot-icon {
-  width: 20px;
-  height: 20px;
+  width: 22px;
+  height: 22px;
   display: block;
 }
 
