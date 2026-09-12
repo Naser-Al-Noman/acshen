@@ -1,4 +1,4 @@
-﻿:root {
+:root {
   --bg: #0c1220;
   --surface: #151d2e;
   --text: #f3f6fb;
@@ -451,7 +451,7 @@ body[data-theme="light"] {
 }
 
 .loc-viewport {
-  --loc-cycle: 20s;
+  --loc-cycle: 24s;
   --loc-ease: cubic-bezier(0.45, 0, 0.3, 1);
   /* Dhaka's position inside the world map, and the zoom that fills the frame */
   --loc-x: 73.822%;
@@ -498,6 +498,7 @@ body[data-theme="light"] {
   height: 3.436%;
   aspect-ratio: 0.7205;
   transform: translateX(-50%);
+  overflow: visible;
 }
 
 .loc-bd-vector {
@@ -564,25 +565,23 @@ body[data-theme="light"] {
 
 .loc-stage-bd {
   animation: loc-stage-bd var(--loc-cycle) var(--loc-ease) infinite;
-}
-
-.loc-stage-dhaka {
-  animation: loc-stage-dhaka var(--loc-cycle) var(--loc-ease) infinite;
+  color: var(--gold);
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.9);
 }
 
 @keyframes loc-zoom {
   0%,
-  8% {
+  7% {
     transform: translate(0, 0) scale(1);
   }
-  30% {
+  26% {
     transform: translate(calc(50% - 64.29% * 2.4), calc(50% - 46.54% * 2.4)) scale(2.4);
   }
-  62%,
-  84% {
+  42%,
+  54% {
     transform: translate(calc(50% - var(--loc-x) * 23.3), calc(50% - var(--loc-y) * 23.3)) scale(23.3);
   }
-  94%,
+  62%,
   100% {
     transform: translate(0, 0) scale(1);
   }
@@ -590,16 +589,16 @@ body[data-theme="light"] {
 
 @keyframes loc-world-fade {
   0%,
-  34% {
+  30% {
     opacity: 1;
     filter: blur(0);
   }
-  52%,
-  86% {
+  42%,
+  52% {
     opacity: 0;
     filter: blur(2px);
   }
-  96%,
+  62%,
   100% {
     opacity: 1;
     filter: blur(0);
@@ -608,14 +607,14 @@ body[data-theme="light"] {
 
 @keyframes loc-bd-fade {
   0%,
-  30% {
+  26% {
     opacity: 0;
   }
-  46%,
-  86% {
+  38%,
+  54% {
     opacity: 1;
   }
-  94%,
+  62%,
   100% {
     opacity: 0;
   }
@@ -641,40 +640,29 @@ body[data-theme="light"] {
 
 @keyframes loc-stage-world {
   0%,
-  18% {
+  16% {
     opacity: 1;
   }
-  26%,
-  100% {
+  24%,
+  58% {
     opacity: 0;
+  }
+  64%,
+  100% {
+    opacity: 1;
   }
 }
 
 @keyframes loc-stage-bd {
   0%,
-  34% {
+  30% {
     opacity: 0;
   }
-  44%,
-  58% {
+  38%,
+  54% {
     opacity: 1;
   }
-  66%,
-  100% {
-    opacity: 0;
-  }
-}
-
-@keyframes loc-stage-dhaka {
-  0%,
-  64% {
-    opacity: 0;
-  }
-  72%,
-  86% {
-    opacity: 1;
-  }
-  94%,
+  60%,
   100% {
     opacity: 0;
   }
@@ -2908,12 +2896,12 @@ a:hover {
     transform: translate(calc(50% - var(--loc-x) * 23.3), calc(50% - var(--loc-y) * 23.3)) scale(23.3);
   }
 
-  .loc-world {
-    opacity: 0;
-  }
-
   .loc-bd-vector {
     opacity: 1;
+  }
+
+  .loc-world {
+    opacity: 0;
   }
 
   .hero-frame-trace {
@@ -2921,12 +2909,11 @@ a:hover {
     opacity: 0.55;
   }
 
-  .loc-stage-dhaka {
+  .loc-stage-bd {
     opacity: 1;
   }
 
-  .loc-stage-world,
-  .loc-stage-bd {
+  .loc-stage-world {
     opacity: 0;
   }
 
