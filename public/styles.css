@@ -1,4 +1,4 @@
-:root {
+﻿:root {
   --bg: #0c1220;
   --surface: #151d2e;
   --text: #f3f6fb;
@@ -451,7 +451,7 @@ body[data-theme="light"] {
 }
 
 .loc-viewport {
-  --loc-cycle: 16s;
+  --loc-cycle: 20s;
   --loc-ease: cubic-bezier(0.45, 0, 0.3, 1);
   /* Dhaka's position inside the world map, and the zoom that fills the frame */
   --loc-x: 73.822%;
@@ -498,7 +498,6 @@ body[data-theme="light"] {
   height: 3.436%;
   aspect-ratio: 0.7205;
   transform: translateX(-50%);
-  overflow: visible;
 }
 
 .loc-bd-vector {
@@ -565,23 +564,25 @@ body[data-theme="light"] {
 
 .loc-stage-bd {
   animation: loc-stage-bd var(--loc-cycle) var(--loc-ease) infinite;
-  color: var(--gold);
-  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.9);
+}
+
+.loc-stage-dhaka {
+  animation: loc-stage-dhaka var(--loc-cycle) var(--loc-ease) infinite;
 }
 
 @keyframes loc-zoom {
   0%,
-  10% {
+  8% {
     transform: translate(0, 0) scale(1);
   }
-  39% {
+  30% {
     transform: translate(calc(50% - 64.29% * 2.4), calc(50% - 46.54% * 2.4)) scale(2.4);
   }
   62%,
-  80% {
+  84% {
     transform: translate(calc(50% - var(--loc-x) * 23.3), calc(50% - var(--loc-y) * 23.3)) scale(23.3);
   }
-  92%,
+  94%,
   100% {
     transform: translate(0, 0) scale(1);
   }
@@ -589,16 +590,16 @@ body[data-theme="light"] {
 
 @keyframes loc-world-fade {
   0%,
-  45% {
+  34% {
     opacity: 1;
     filter: blur(0);
   }
-  62%,
-  77% {
+  52%,
+  86% {
     opacity: 0;
     filter: blur(2px);
   }
-  92%,
+  96%,
   100% {
     opacity: 1;
     filter: blur(0);
@@ -607,14 +608,14 @@ body[data-theme="light"] {
 
 @keyframes loc-bd-fade {
   0%,
-  39% {
+  30% {
     opacity: 0;
   }
-  56%,
-  80% {
+  46%,
+  86% {
     opacity: 1;
   }
-  92%,
+  94%,
   100% {
     opacity: 0;
   }
@@ -622,16 +623,16 @@ body[data-theme="light"] {
 
 @keyframes loc-pin {
   0%,
-  93% {
+  64% {
     opacity: 0;
     transform: translate(-50%, -128%) scale(0.6);
   }
-  95%,
-  97% {
+  72%,
+  84% {
     opacity: 1;
     transform: translate(-50%, -104%) scale(1);
   }
-  99%,
+  92%,
   100% {
     opacity: 0;
     transform: translate(-50%, -104%) scale(1);
@@ -640,29 +641,40 @@ body[data-theme="light"] {
 
 @keyframes loc-stage-world {
   0%,
-  24% {
+  18% {
     opacity: 1;
   }
-  36%,
-  86% {
-    opacity: 0;
-  }
-  95%,
+  26%,
   100% {
-    opacity: 1;
+    opacity: 0;
   }
 }
 
 @keyframes loc-stage-bd {
   0%,
-  45% {
+  34% {
     opacity: 0;
   }
-  56%,
-  80% {
+  44%,
+  58% {
     opacity: 1;
   }
-  89%,
+  66%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes loc-stage-dhaka {
+  0%,
+  64% {
+    opacity: 0;
+  }
+  72%,
+  86% {
+    opacity: 1;
+  }
+  94%,
   100% {
     opacity: 0;
   }
@@ -2896,12 +2908,12 @@ a:hover {
     transform: translate(calc(50% - var(--loc-x) * 23.3), calc(50% - var(--loc-y) * 23.3)) scale(23.3);
   }
 
-  .loc-bd-vector {
-    opacity: 1;
-  }
-
   .loc-world {
     opacity: 0;
+  }
+
+  .loc-bd-vector {
+    opacity: 1;
   }
 
   .hero-frame-trace {
@@ -2909,11 +2921,12 @@ a:hover {
     opacity: 0.55;
   }
 
-  .loc-stage-bd {
+  .loc-stage-dhaka {
     opacity: 1;
   }
 
-  .loc-stage-world {
+  .loc-stage-world,
+  .loc-stage-bd {
     opacity: 0;
   }
 
